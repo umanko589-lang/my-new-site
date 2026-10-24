@@ -1,0 +1,1466 @@
+<!-- ЗАМЕНИТЕ НАЗВАНИЕ, КОНТАКТЫ И WEBHOOK ПЕРЕД ПУБЛИКАЦИЕЙ -->
+<script>
+  const TA_CONFIG = {
+    agencyName: 'AURA TRAVEL',
+    webhookUrl: '',
+    telegramUrl: 'https://t.me/USERNAME',
+    whatsappUrl: 'https://wa.me/77000000000',
+    phone: '+77000000000',
+    email: 'travel@example.com',
+    city: 'Алматы'
+  };
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<div id="ta-premium-site">
+  <!-- HEADER -->
+  <header class="ta-header" id="ta-header">
+    <div class="ta-container ta-header-inner">
+      <a href="#" class="ta-logo" onclick="event.preventDefault(); window.scrollTo({top:0,behavior:'smooth'})">
+        <span class="ta-logo-name">AURA TRAVEL</span>
+        <span class="ta-logo-sub">Туры и путешествия из Алматы</span>
+      </a>
+      <nav class="ta-nav" id="ta-nav" aria-label="Основная навигация">
+        <ul class="ta-nav-list">
+          <li><a href="#ta-destinations" class="ta-nav-link">Направления</a></li>
+          <li><a href="#ta-types" class="ta-nav-link">Виды отдыха</a></li>
+          <li><a href="#" class="ta-nav-link" data-action="open-quiz">Подбор тура</a></li>
+          <li><a href="#ta-why-us" class="ta-nav-link">Почему мы</a></li>
+          <li><a href="#ta-how-it-works" class="ta-nav-link">Как работаем</a></li>
+          <li><a href="#ta-faq" class="ta-nav-link">FAQ</a></li>
+          <li><a href="#ta-contacts" class="ta-nav-link">Контакты</a></li>
+        </ul>
+        <button class="ta-btn ta-btn-primary ta-header-cta" data-action="open-quiz">Подобрать тур</button>
+      </nav>
+      <button class="ta-burger" id="ta-burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="ta-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="ta-hero" id="ta-hero">
+    <div class="ta-hero-bg">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80" alt="Премиальный курорт с пляжем и морем" class="ta-hero-img">
+      <div class="ta-hero-overlay"></div>
+    </div>
+    <div class="ta-container ta-hero-content ta-animate">
+      <h1 class="ta-h1">Путешествие, которое подходит именно вам</h1>
+      <p class="ta-hero-sub">Подберём пляжный, семейный, горящий или экскурсионный тур под ваши даты, бюджет и пожелания</p>
+      <div class="ta-hero-btns">
+        <button class="ta-btn ta-btn-gold" data-action="open-quiz">Подобрать тур</button>
+        <a href="#ta-destinations" class="ta-btn ta-btn-outline">Смотреть направления</a>
+      </div>
+      <div class="ta-hero-trust">
+        <div class="ta-trust-item">
+          <svg class="ta-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          <span>Подбор под бюджет</span>
+        </div>
+        <div class="ta-trust-item">
+          <svg class="ta-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          <span>Помощь с выбором</span>
+        </div>
+        <div class="ta-trust-item">
+          <svg class="ta-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <span>Сопровождение до поездки</span>
+        </div>
+        <div class="ta-trust-item">
+          <svg class="ta-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+          <span>Вылеты из Алматы и Астаны</span>
+        </div>
+      </div>
+    </div>
+    <div class="ta-container ta-hero-form-wrap ta-animate">
+      <form class="ta-form-glass" id="ta-hero-form" data-type="hero_quick_form" novalidate>
+        <h3 class="ta-form-glass-title">Быстрый подбор тура</h3>
+        <div class="ta-form-glass-grid">
+          <div class="ta-form-group">
+            <label class="ta-sr-only" for="ta-hf-name">Ваше имя</label>
+            <input type="text" id="ta-hf-name" class="ta-input" placeholder="Ваше имя" name="name" required>
+            <span class="ta-error-msg"></span>
+          </div>
+          <div class="ta-form-group">
+            <label class="ta-sr-only" for="ta-hf-dest">Куда хотите поехать?</label>
+            <select id="ta-hf-dest" class="ta-select" name="destination" required>
+              <option value="" disabled selected>Куда хотите поехать?</option>
+              <option value="Турция">Турция</option>
+              <option value="Египет">Египет</option>
+              <option value="ОАЭ">ОАЭ</option>
+              <option value="Таиланд">Таиланд</option>
+              <option value="Вьетнам">Вьетнам</option>
+              <option value="Мальдивы">Мальдивы</option>
+              <option value="Европа">Европа</option>
+              <option value="Пока не определился">Пока не определился</option>
+            </select>
+          </div>
+          <div class="ta-form-group">
+            <label class="ta-sr-only" for="ta-hf-date">Когда?</label>
+            <input type="text" id="ta-hf-date" class="ta-input" placeholder="Когда планируете?" name="travelDate">
+          </div>
+          <div class="ta-form-group">
+            <label class="ta-sr-only" for="ta-hf-people">Количество туристов</label>
+            <input type="number" id="ta-hf-people" class="ta-input" placeholder="Сколько человек?" name="peopleCount" min="1" max="20" value="2">
+          </div>
+          <div class="ta-form-group">
+            <label class="ta-sr-only" for="ta-hf-phone">Телефон</label>
+            <input type="tel" id="ta-hf-phone" class="ta-input" placeholder="Ваш телефон" name="phone" required>
+          </div>
+        </div>
+        <div class="ta-form-consent">
+          <label class="ta-checkbox-label">
+            <input type="checkbox" name="consent" required class="ta-checkbox">
+            <span>Даю согласие на обработку персональных данных</span>
+          </label>
+          <span class="ta-error-msg ta-consent-error"></span>
+        </div>
+        <button type="submit" class="ta-btn ta-btn-primary ta-btn-full ta-form-submit-btn">Получить варианты</button>
+        <input type="text" name="ta_website" class="ta-hp" tabindex="-1" autocomplete="off">
+      </form>
+    </div>
+  </section>
+
+  <!-- DESTINATIONS -->
+  <section class="ta-section ta-bg-light" id="ta-destinations">
+    <div class="ta-container">
+      <h2 class="ta-h2 ta-animate">Популярные направления</h2>
+      <p class="ta-section-sub ta-animate">Выберите страну — мы подготовим актуальные предложения под ваши даты</p>
+      <div class="ta-grid-4">
+        <div class="ta-card ta-animate" data-dest="Турция">
+          <div class="ta-card-img-wrap"><img src="https://images.unsplash.com/photo-1593238739364-18cfde865870?w=600&q=80" alt="Пляжный отдых в Турции" loading="lazy"></div>
+          <div class="ta-card-body">
+            <h3 class="ta-card-title">Турция</h3>
+            <p class="ta-card-text">Море, «всё включено», анимации и комфорт для всей семьи. Идеально для отдыха в любое время года.</p>
+            <p class="ta-card-meta">Для пар и семей · 7–10 ночей</p>
+            <p class="ta-card-note">Стоимость уточняется</p>
+            <button class="ta-btn ta-btn-outline ta-btn-sm" data-action="open-form" data-dest="Турция">Получить предложение</button>
+          </div>
+        </div>
+        <div class="ta-card ta-animate" data-dest="Египет">
+          <div class="ta-card-img-wrap"><img src="https://images.unsplash.com/photo-1539768942893-daf53e736b68?w=600&q=80" alt="Красное море и кораллы в Египте" loading="lazy"></div>
+          <div class="ta-card-body">
+            <h3 class="ta-card-title">Египет</h3>
+            <p class="ta-card-text">Тёплое море, дайвинг и доступные отели у Красного моря. Подходит для быстрого перелёта.</p>
+            <p class="ta-card-meta">Для пар и дайверов · 7–12 ночей</p>
+            <p class="ta-card-note">Стоимость уточняется</p>
+            <button class="ta-btn ta-btn-outline ta-btn-sm" data-action="open-form" data-dest="Египет">Получить предложение</button>
+          </div>
+        </div>
+        <div class="ta-card ta-animate" data-dest="ОАЭ">
+          <div class="ta-card-img-wrap"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" alt="Премиальные отели и небоскребы ОАЭ" loading="lazy"></div>
+          <div class="ta-card-body">
+            <h3 class="ta-card-title">ОАЭ</h3>
+            <p class="ta-card-text">Премиальный сервис, шопинг, развлечения и современная инфраструктура для комфортного отдыха.</p>
+            <p class="ta-card-meta">Для пар и семей · 5–10 ночей</p>
+            <p class="ta-card-note">Стоимость уточняется</p>
+            <button class="ta-btn ta-btn-outline ta-btn-sm" data-action="open-form" data-dest="ОАЭ">Получить предложение</button>
+          </div>
+        </div>
+        <div class="ta-card ta-animate" data-dest="Таиланд">
+          <div class="ta-card-img-wrap"><img src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=600&q=80" alt="Тропический пляж Таиланда" loading="lazy"></div>
+          <div class="ta-card-body">
+            <h3 class="ta-card-title">Таиланд</h3>
+            <p class="ta-card-text">Экзотика, красивые пляжи, вкусная еда и сочетание разных культур в одной поездке.</p>
+            <p class="ta-card-meta">Для любителей экзотики · 10–14 ночей</p>
+            <p class="ta-card-note">Стоимость уточняется</p>
+            <button class="ta-btn ta-btn-outline ta-btn-sm" data-action="open-form" data-dest="Таиланд">Получить предложение</button>
+          </div>
+        </div>
+        <div class="ta-card ta-animate" data-dest="Вьетнам">
+          <div class="ta-card-img-wrap"><img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=600&q=80" alt="Пейзажи Вьетнама" loading="lazy"></div>
+          <div class="ta-card-body">
+            <h3 class="ta-card-title">Вьетнам</h3>
+            <p class="ta-card-text">Доступные цены, дружелюбная атмосфера, природа и спокойный отдых у океана.</p>
+            <p class="ta-card-meta">Для спокойного отдыха · 10–14 ночей</p>
+            <p class="ta-card-note">Стоимость уточняется</p>
+            <button class="ta-btn ta-btn-outline ta-btn-sm" data-action="open-form" data-dest="Вьетнам">Получить предложение</button>
+          </div>
+        </div>
+        <div class="ta-card ta-animate" data-dest="Мальдивы">
+          <div class="ta-card-img-wrap"><img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=80" alt="Бунгало на воде на Мальдивах" loading="lazy"></div>
+          <div class="ta-card-body">
+            <h3 class="ta-card-title">Мальдивы</h3>
+            <p class="ta-card-text">Роскошные виллы на воде, чистейший океан и полное уединение для премиального отдыха.</p>
+            <p class="ta-card-meta">Для пар и медового месяца · 7–10 ночей</p>
+            <p class="ta-card-note">Стоимость уточняется</p>
+            <button class="ta-btn ta-btn-outline ta-btn-sm" data-action="open-form" data-dest="Мальдивы">Получить предложение</button>
+          </div>
+        </div>
+        <div class="ta-card ta-animate" data-dest="Грузия">
+          <div class="ta-card-img-wrap"><img src="https://images.unsplash.com/photo-1612698093158-e07ac200d44e?w=600&q=80" alt="Горы и старинная архитектура Грузии" loading="lazy"></div>
+          <div class="ta-card-body">
+            <h3 class="ta-card-title">Грузия</h3>
+            <p class="ta-card-text">Горные пейзажи, гастрономия, виноделие и гостеприимство рядом с Казахстаном.</p>
+            <p class="ta-card-meta">Для гурманов и путешественников · 5–10 ночей</p>
+            <p class="ta-card-note">Стоимость уточняется</p>
+            <button class="ta-btn ta-btn-outline ta-btn-sm" data-action="open-form" data-dest="Грузия">Получить предложение</button>
+          </div>
+        </div>
+        <div class="ta-card ta-animate" data-dest="Европа">
+          <div class="ta-card-img-wrap"><img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80" alt="Архитектура и улицы Европы" loading="lazy"></div>
+          <div class="ta-card-body">
+            <h3 class="ta-card-title">Европа</h3>
+            <p class="ta-card-text">Экскурсии, музеи, архитектура и прогулки по историческим центрам европейских столиц.</p>
+            <p class="ta-card-meta">Для экскурсионного отдыха · 5–12 ночей</p>
+            <p class="ta-card-note">Стоимость уточняется</p>
+            <button class="ta-btn ta-btn-outline ta-btn-sm" data-action="open-form" data-dest="Европа">Получить предложение</button>
+          </div>
+        </div>
+      </div>
+      <p class="ta-note-center ta-animate">Цена зависит от дат, отеля, количества туристов и города вылета</p>
+    </div>
+  </section>
+
+  <!-- TYPES -->
+  <section class="ta-section ta-bg-white" id="ta-types">
+    <div class="ta-container">
+      <h2 class="ta-h2 ta-animate">Какой отдых вам подходит?</h2>
+      <div class="ta-grid-2">
+        <div class="ta-type-card ta-animate" data-type="beach">
+          <div class="ta-type-img"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80" alt="Пляжный отдых" loading="lazy"></div>
+          <div class="ta-type-body">
+            <h3 class="ta-h3">Пляжный отдых</h3>
+            <p class="ta-type-text">Море, комфортный отель и отдых без лишней спешки. Подберём направление с учётом сезона, бюджета и желаемого уровня сервиса.</p>
+            <button class="ta-btn ta-btn-primary" data-action="open-form" data-holiday="Пляжный отдых">Подобрать пляжный тур</button>
+          </div>
+        </div>
+        <div class="ta-type-card ta-animate" data-type="hot">
+          <div class="ta-type-img"><img src="https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=800&q=80" alt="Горящие туры" loading="lazy"></div>
+          <div class="ta-type-body">
+            <h3 class="ta-h3">Горящие туры</h3>
+            <p class="ta-type-text">Варианты для тех, кто готов отправиться в путешествие в ближайшее время. Актуальность цены и наличие подтверждаются перед бронированием.</p>
+            <button class="ta-btn ta-btn-primary" data-action="open-form" data-holiday="Горящий тур">Посмотреть горящие варианты</button>
+          </div>
+        </div>
+        <div class="ta-type-card ta-animate" data-type="family">
+          <div class="ta-type-img"><img src="https://images.unsplash.com/photo-1503220317266-8e5b70a21ed6?w=800&q=80" alt="Семейный отдых с детьми" loading="lazy"></div>
+          <div class="ta-type-body">
+            <h3 class="ta-h3">Семейные туры</h3>
+            <p class="ta-type-text">Отели и курорты, где удобно отдыхать с детьми: питание, территория, пляж, развлечения и подходящие условия проживания.</p>
+            <button class="ta-btn ta-btn-primary" data-action="open-form" data-holiday="Семейный отдых">Подобрать семейный тур</button>
+          </div>
+        </div>
+        <div class="ta-type-card ta-animate" data-type="excursion">
+          <div class="ta-type-img"><img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&q=80" alt="Экскурсионный тур" loading="lazy"></div>
+          <div class="ta-type-body">
+            <h3 class="ta-h3">Экскурсионные туры</h3>
+            <p class="ta-type-text">Путешествия с насыщенной программой, архитектурой, культурой и новыми впечатлениями.</p>
+            <button class="ta-btn ta-btn-primary" data-action="open-form" data-holiday="Экскурсионный тур">Подобрать экскурсионный тур</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNDECIDED -->
+  <section class="ta-section ta-bg-dark" id="ta-undecided">
+    <div class="ta-container ta-text-center">
+      <h2 class="ta-h2-light ta-animate">Не знаете, куда поехать?</h2>
+      <p class="ta-text-light ta-animate">Ответьте на несколько вопросов. Мы учтём даты, количество туристов, формат отдыха и бюджет, а затем предложим подходящие направления.</p>
+      <button class="ta-btn ta-btn-gold ta-animate" data-action="open-quiz">Пройти подбор тура</button>
+      <p class="ta-text-light-sub ta-animate">Это займёт около одной минуты</p>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="ta-section ta-bg-light" id="ta-why-us">
+    <div class="ta-container">
+      <h2 class="ta-h2 ta-animate">Путешествие начинается с правильного выбора</h2>
+      <div class="ta-grid-2 ta-features">
+        <div class="ta-feature ta-animate"><div class="ta-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div><strong>Подбираем тур под реальный бюджет</strong><p>Учитываем ваши финансовые возможности и находим лучший вариант соотношения цены и качества.</p></div></div>
+        <div class="ta-feature ta-animate"><div class="ta-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><div><strong>Объясняем условия простым языком</strong><p>Без сложных терминов — подробно рассказываем, что входит в стоимость, а за что нужно доплатить.</p></div></div>
+        <div class="ta-feature ta-animate"><div class="ta-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div><strong>Сравниваем несколько вариантов</strong><p>Предлагаем не одно, а несколько направлений и отелей, чтобы вы могли выбрать.</p></div></div>
+        <div class="ta-feature ta-animate"><div class="ta-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><div><strong>Учитываем отдых с детьми</strong><p>Подбираем отели с детской инфраструктурой, удобным питанием и безопасной территорией.</p></div></div>
+        <div class="ta-feature ta-animate"><div class="ta-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div><strong>Проверяем детали перед бронированием</strong><p>Убеждаемся, что все условия соответствуют ожиданиям, прежде чем оформлять заявку.</p></div></div>
+        <div class="ta-feature ta-animate"><div class="ta-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div><strong>Остаёмся на связи до начала поездки</strong><p>Отвечаем на вопросы, помогаем с подготовкой и поддерживаем перед вылетом.</p></div></div>
+        <div class="ta-feature ta-animate"><div class="ta-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div><strong>Помогаем разобраться с документами</strong><p>Подскажем, какие документы нужны, и актуальную информацию по визам.</p></div></div>
+        <div class="ta-feature ta-animate"><div class="ta-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="8" y1="15" x2="16" y2="15"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div><div><strong>Не навязываем первое попавшееся предложение</strong><p>Мы заинтересованы в том, чтобы вы остались довольны отдыхом и вернулись к нам снова.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="ta-section ta-bg-white" id="ta-how-it-works">
+    <div class="ta-container">
+      <h2 class="ta-h2 ta-animate">Как мы подбираем путешествие</h2>
+      <div class="ta-steps">
+        <div class="ta-step ta-animate">
+          <div class="ta-step-num">01</div>
+          <h3 class="ta-h4">Вы оставляете заявку</h3>
+          <p>Указываете направление или отвечаете на вопросы квиза.</p>
+        </div>
+        <div class="ta-step ta-animate">
+          <div class="ta-step-num">02</div>
+          <h3 class="ta-h4">Менеджер уточняет детали</h3>
+          <p>Даты, бюджет, количество туристов, пожелания к отелю и отдыху.</p>
+        </div>
+        <div class="ta-step ta-animate">
+          <div class="ta-step-num">03</div>
+          <h3 class="ta-h4">Вы получаете варианты</h3>
+          <p>Менеджер подготавливает несколько предложений для сравнения.</p>
+        </div>
+        <div class="ta-step ta-animate">
+          <div class="ta-step-num">04</div>
+          <h3 class="ta-h4">Вы выбираете тур</h3>
+          <p>Обсуждаете отель, перелёт, питание и условия бронирования.</p>
+        </div>
+        <div class="ta-step ta-animate">
+          <div class="ta-step-num">05</div>
+          <h3 class="ta-h4">Оформление и сопровождение</h3>
+          <p>После подтверждения стоимости и наличия оформляются документы. Менеджер на связи до начала путешествия.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOT TOURS FORM -->
+  <section class="ta-section ta-bg-sand" id="ta-hot-tours">
+    <div class="ta-container ta-text-center">
+      <h2 class="ta-h2 ta-animate">Готовы отправиться в путешествие в ближайшее время?</h2>
+      <p class="ta-section-sub ta-animate">Оставьте телефон. Менеджер проверит актуальные предложения на ваши даты и свяжется с вами.</p>
+      <form class="ta-form-inline ta-animate" id="ta-hot-form" data-type="hot_tour_form" novalidate>
+        <div class="ta-form-group"><input type="text" class="ta-input" placeholder="Ваше имя" name="name" required></div>
+        <div class="ta-form-group"><input type="tel" class="ta-input" placeholder="Телефон" name="phone" required></div>
+        <div class="ta-form-group"><input type="text" class="ta-input" placeholder="Когда готовы вылететь?" name="travelDate"></div>
+        <div class="ta-form-group"><input type="number" class="ta-input" placeholder="Сколько человек?" name="peopleCount" min="1" value="2"></div>
+        <div class="ta-form-consent ta-full">
+          <label class="ta-checkbox-label">
+            <input type="checkbox" name="consent" required class="ta-checkbox">
+            <span>Даю согласие на обработку персональных данных</span>
+          </label>
+          <span class="ta-error-msg ta-consent-error"></span>
+        </div>
+        <button type="submit" class="ta-btn ta-btn-primary ta-form-submit-btn">Проверить горящие туры</button>
+        <input type="text" name="ta_website" class="ta-hp" tabindex="-1" autocomplete="off">
+      </form>
+      <p class="ta-disclaimer ta-animate">Наличие и стоимость горящих туров быстро меняются и подтверждаются на момент бронирования.</p>
+    </div>
+  </section>
+
+  <!-- FAMILY -->
+  <section class="ta-section ta-bg-white" id="ta-family">
+    <div class="ta-container ta-family-grid">
+      <div class="ta-family-img ta-animate">
+        <img src="https://images.unsplash.com/photo-1503220317266-8e5b70a21ed6?w=800&q=80" alt="Семья отдыхает на пляже" loading="lazy">
+      </div>
+      <div class="ta-family-content ta-animate">
+        <h2 class="ta-h2 ta-ta-left">Отдых, комфортный и для взрослых, и для детей</h2>
+        <p class="ta-family-text">При подборе семейного тура мы учитываем все важные детали:</p>
+        <ul class="ta-family-list">
+          <li>Удобный перелёт</li>
+          <li>Питание, подходящее для детей</li>
+          <li>Безопасный пляж и вход в море</li>
+          <li>Детская инфраструктура и анимация</li>
+          <li>Просторная территория отеля</li>
+          <li>Возраст детей и условия размещения</li>
+          <li>Семейные номера и подключенные кроватки</li>
+          <li>Комфортный трансфер</li>
+          <li>Сезон и погодные условия</li>
+        </ul>
+        <button class="ta-btn ta-btn-primary" data-action="open-form" data-holiday="Семейный отдых">Подобрать семейный тур</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS PLACEHOLDER -->
+  <!-- ПОСЛЕ ПОЛУЧЕНИЯ РЕАЛЬНЫХ ОТЗЫВОВ ЗАМЕНИТЬ ЭТОТ БЛОК -->
+  <section class="ta-section ta-bg-light" id="ta-reviews">
+    <div class="ta-container">
+      <h2 class="ta-h2 ta-animate">Что вы получите при подборе</h2>
+      <div class="ta-grid-3">
+        <div class="ta-benefit-card ta-animate">
+          <div class="ta-benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+          <h3 class="ta-h4">Несколько вариантов для сравнения</h3>
+          <p>Вы получите не одно, а несколько предложений, чтобы выбрать лучшее.</p>
+        </div>
+        <div class="ta-benefit-card ta-animate">
+          <div class="ta-benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
+          <h3 class="ta-h4">Объяснение различий между отелями</h3>
+          <p>Расскажем, чем отличаются варианты, и поможем разобраться в условиях.</p>
+        </div>
+        <div class="ta-benefit-card ta-animate">
+          <div class="ta-benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+          <h3 class="ta-h4">Подбор под бюджет</h3>
+          <p>Подберём варианты, которые соответствуют вашим возможностям.</p>
+        </div>
+        <div class="ta-benefit-card ta-animate">
+          <div class="ta-benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <h3 class="ta-h4">Проверка актуальности предложения</h3>
+          <p>Перед бронированием убедимся, что тур доступен по указанной цене.</p>
+        </div>
+        <div class="ta-benefit-card ta-animate">
+          <div class="ta-benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+          <h3 class="ta-h4">Помощь с выбором</h3>
+          <p>Ответим на все вопросы и поможем принять решение.</p>
+        </div>
+        <div class="ta-benefit-card ta-animate">
+          <div class="ta-benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <h3 class="ta-h4">Ответы на вопросы перед поездкой</h3>
+          <p>Поддержим на этапе подготовки и решим возникающие вопросы.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="ta-section ta-bg-white" id="ta-faq">
+    <div class="ta-container ta-faq-container">
+      <h2 class="ta-h2 ta-animate">Частые вопросы</h2>
+      <div class="ta-faq-list">
+        <div class="ta-faq-item ta-animate">
+          <button class="ta-faq-btn" aria-expanded="false">
+            <span>Сколько стоит подбор тура?</span>
+            <svg class="ta-faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="ta-faq-content" aria-hidden="true"><p>Условия подбора и оформления менеджер уточнит при первом обращении.</p></div>
+        </div>
+        <div class="ta-faq-item ta-animate">
+          <button class="ta-faq-btn" aria-expanded="false">
+            <span>Можно ли подобрать тур, если я ещё не выбрал страну?</span>
+            <svg class="ta-faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="ta-faq-content" aria-hidden="true"><p>Да, пройдите короткий подбор тура на нашем сайте — мы предложим направления, которые подходят под ваши даты и бюджет.</p></div>
+        </div>
+        <div class="ta-faq-item ta-animate">
+          <button class="ta-faq-btn" aria-expanded="false">
+            <span>От чего зависит цена тура?</span>
+            <svg class="ta-faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="ta-faq-content" aria-hidden="true"><p>Стоимость зависит от страны, сезона, категории отеля, типа питания, количества туристов, города вылета и актуальных акций на момент бронирования.</p></div>
+        </div>
+        <div class="ta-faq-item ta-animate">
+          <button class="ta-faq-btn" aria-expanded="false">
+            <span>Когда лучше бронировать путешествие?</span>
+            <svg class="ta-faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="ta-faq-content" aria-hidden="true"><p>Раннее бронирование часто позволяет выбрать лучший отель по более выгодной цене, но бывают и хорошие горящие предложения. Менеджер подскажет оптимальный вариант для ваших дат.</p></div>
+        </div>
+        <div class="ta-faq-item ta-animate">
+          <button class="ta-faq-btn" aria-expanded="false">
+            <span>Можно ли подобрать тур для семьи с детьми?</span>
+            <svg class="ta-faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="ta-faq-content" aria-hidden="true"><p>Да, мы специализируемся на семейном отдыхе и учитываем возраст детей, питание, инфраструктуру и другие важные детали.</p></div>
+        </div>
+        <div class="ta-faq-item ta-animate">
+          <button class="ta-faq-btn" aria-expanded="false">
+            <span>Есть ли туры с вылетом из Алматы?</span>
+            <svg class="ta-faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="ta-faq-content" aria-hidden="true"><p>Да, большинство направлений доступно с вылетом из Алматы. Точный маршрут и наличие рейсов зависят от направления и дат.</p></div>
+        </div>
+        <div class="ta-faq-item ta-animate">
+          <button class="ta-faq-btn" aria-expanded="false">
+            <span>Можно ли вылететь из Астаны?</span>
+            <svg class="ta-faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="ta-faq-content" aria-hidden="true"><p>Да, по ряду направлений возможен вылет из Астаны. Уточните доступные варианты у менеджера при подборе тура.</p></div>
+        </div>
+        <div class="ta-faq-item ta-animate">
+          <button class="ta-faq-btn" aria-expanded="false">
+            <span>Что входит в стоимость тура?</span>
+            <svg class="ta-faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="ta-faq-content" aria-hidden="true"><p>Как правило, это перелёт, трансфер, проживание и питание согласно выбранному тарифу. Точный состав менеджер уточнит по каждому конкретному предложению.</p></div>
+        </div>
+        <div class="ta-faq-item ta-animate">
+          <button class="ta-faq-btn" aria-expanded="false">
+            <span>Нужна ли виза?</span>
+            <svg class="ta-faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="ta-faq-content" aria-hidden="true"><p>Визовые требования зависят от страны, гражданства и действующих правил. Менеджер уточнит актуальную информацию перед оформлением.</p></div>
+        </div>
+        <div class="ta-faq-item ta-animate">
+          <button class="ta-faq-btn" aria-expanded="false">
+            <span>Как узнать, актуально ли горящее предложение?</span>
+            <svg class="ta-faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="ta-faq-content" aria-hidden="true"><p>Горящие туры продаются быстро, и их наличие меняется в реальном времени. Оставьте заявку — менеджер проверит актуальные варианты перед тем, как предложить их вам.</p></div>
+        </div>
+        <div class="ta-faq-item ta-animate">
+          <button class="ta-faq-btn" aria-expanded="false">
+            <span>Какие данные нужны для бронирования?</span>
+            <svg class="ta-faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="ta-faq-content" aria-hidden="true"><p>Паспортные данные туристов, информация о детях, если они путешествуют с вами. Полный перечень менеджер сообщит при оформлении.</p></div>
+        </div>
+        <div class="ta-faq-item ta-animate">
+          <button class="ta-faq-btn" aria-expanded="false">
+            <span>Что происходит после отправки заявки?</span>
+            <svg class="ta-faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="ta-faq-content" aria-hidden="true"><p>Менеджер получает вашу заявку, связывается с вами, уточняет детали и подготавливает подходящие варианты путешествий.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="ta-section ta-bg-dark" id="ta-final-cta">
+    <div class="ta-container ta-text-center">
+      <h2 class="ta-h2-light ta-animate">Давайте найдём путешествие под ваши пожелания</h2>
+      <p class="ta-text-light ta-animate">Оставьте имя и телефон. Даже если вы пока не выбрали страну, менеджер поможет определить подходящие направления.</p>
+      <button class="ta-btn ta-btn-gold ta-animate" data-action="open-form">Получить варианты туров</button>
+      <p class="ta-text-light-sub ta-animate">Без обязательства сразу бронировать</p>
+    </div>
+  </section>
+
+  <!-- CONTACTS / FOOTER -->
+  <footer class="ta-footer" id="ta-contacts">
+    <div class="ta-container">
+      <div class="ta-footer-grid">
+        <div>
+          <span class="ta-logo-name ta-footer-logo">AURA TRAVEL</span>
+          <p class="ta-footer-sub">Туры и путешествия из Алматы</p>
+          <div class="ta-footer-contacts">
+            <a href="tel:+77000000000" class="ta-footer-link" id="ta-footer-phone">+7 700 000 0000</a>
+            <a href="mailto:travel@example.com" class="ta-footer-link" id="ta-footer-email">travel@example.com</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="ta-h4">Контакты</h4>
+          <div class="ta-footer-socials">
+            <a href="https://wa.me/77000000000" class="ta-social-btn" id="ta-footer-wa" target="_blank" rel="noopener noreferrer" aria-label="Написать в WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+            <a href="https://t.me/USERNAME" class="ta-social-btn" id="ta-footer-tg" target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            </a>
+            <a href="tel:+77000000000" class="ta-social-btn" aria-label="Позвонить">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="ta-h4">Информация</h4>
+          <div class="ta-footer-links">
+            <a href="#" class="ta-footer-link" data-action="open-legal" data-doc="privacy">Политика конфиденциальности</a>
+            <a href="#" class="ta-footer-link" data-action="open-legal" data-doc="consent">Согласие на обработку данных</a>
+            <a href="#" class="ta-footer-link" data-action="open-legal" data-doc="terms">Условия бронирования</a>
+          </div>
+        </div>
+      </div>
+      <div class="ta-footer-copy">
+        <p>© <span id="ta-year"></span> AURA TRAVEL. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WA -->
+  <a href="https://wa.me/77000000000" class="ta-wa-float" id="ta-wa-float" target="_blank" rel="noopener noreferrer" aria-label="Написать в WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- MAIN FORM MODAL -->
+  <div class="ta-modal" id="ta-modal-form" role="dialog" aria-modal="true" aria-label="Форма заявки на тур">
+    <div class="ta-modal-overlay"></div>
+    <div class="ta-modal-content ta-modal-form-content">
+      <button class="ta-modal-close" aria-label="Закрыть">&times;</button>
+      <div class="ta-choice-tag" id="ta-choice-tag"></div>
+      <h3 class="ta-h3 ta-ta-left">Получить предложение</h3>
+      <p class="ta-form-sub ta-ta-left">Заполните форму — менеджер подготовит варианты и свяжется с вами</p>
+      <form id="ta-main-form" data-type="main_form" novalidate>
+        <div class="ta-form-grid">
+          <div class="ta-form-group ta-full">
+            <label for="ta-mf-name">Ваше имя *</label>
+            <input type="text" id="ta-mf-name" class="ta-input" name="name" required>
+            <span class="ta-error-msg"></span>
+          </div>
+          <div class="ta-form-group ta-full">
+            <label for="ta-mf-phone">Телефон или WhatsApp *</label>
+            <input type="tel" id="ta-mf-phone" class="ta-input" name="phone" required>
+            <span class="ta-error-msg"></span>
+          </div>
+          <div class="ta-form-group">
+            <label for="ta-mf-dest">Направление</label>
+            <select id="ta-mf-dest" class="ta-select" name="destination">
+              <option value="">Не выбрано</option>
+              <option value="Турция">Турция</option>
+              <option value="Египет">Египет</option>
+              <option value="ОАЭ">ОАЭ</option>
+              <option value="Таиланд">Таиланд</option>
+              <option value="Вьетнам">Вьетнам</option>
+              <option value="Мальдивы">Мальдивы</option>
+              <option value="Грузия">Грузия</option>
+              <option value="Европа">Европа</option>
+              <option value="Пока не определился">Пока не определился</option>
+            </select>
+          </div>
+          <div class="ta-form-group">
+            <label for="ta-mf-type">Вид отдыха</label>
+            <select id="ta-mf-type" class="ta-select" name="holidayType">
+              <option value="">Не выбран</option>
+              <option value="Пляжный отдых">Пляжный отдых</option>
+              <option value="Горящий тур">Горящий тур</option>
+              <option value="Семейный отдых">Семейный отдых</option>
+              <option value="Экскурсионный тур">Экскурсионный тур</option>
+            </select>
+          </div>
+          <div class="ta-form-group">
+            <label for="ta-mf-city">Город вылета</label>
+            <select id="ta-mf-city" class="ta-select" name="departureCity">
+              <option value="Алматы">Алматы</option>
+              <option value="Астана">Астана</option>
+              <option value="Другой город">Другой город</option>
+            </select>
+          </div>
+          <div class="ta-form-group">
+            <label for="ta-mf-date">Предполагаемая дата</label>
+            <input type="text" id="ta-mf-date" class="ta-input" name="travelDate" placeholder="Например: сентябрь 2026">
+          </div>
+          <div class="ta-form-group">
+            <label for="ta-mf-adults">Количество взрослых</label>
+            <input type="number" id="ta-mf-adults" class="ta-input" name="adults" min="1" max="10" value="2">
+          </div>
+          <div class="ta-form-group">
+            <label for="ta-mf-children">Количество детей</label>
+            <input type="number" id="ta-mf-children" class="ta-input" name="children" min="0" max="10" value="0">
+          </div>
+          <div class="ta-form-group ta-full">
+            <label for="ta-mf-budget">Ориентировочный бюджет</label>
+            <select id="ta-mf-budget" class="ta-select" name="budget">
+              <option value="">Не определился</option>
+              <option value="До 500 000 ₸">До 500 000 ₸</option>
+              <option value="500 000–800 000 ₸">500 000–800 000 ₸</option>
+              <option value="800 000–1 200 000 ₸">800 000–1 200 000 ₸</option>
+              <option value="Более 1 200 000 ₸">Более 1 200 000 ₸</option>
+            </select>
+          </div>
+          <div class="ta-form-group ta-full">
+            <label for="ta-mf-comment">Комментарий</label>
+            <textarea id="ta-mf-comment" class="ta-textarea" name="comment" rows="3" placeholder="Пожелания к отелю, питанию, размещению..."></textarea>
+          </div>
+        </div>
+        <div class="ta-form-consent">
+          <label class="ta-checkbox-label">
+            <input type="checkbox" name="consent" required class="ta-checkbox">
+            <span>Даю согласие на обработку персональных данных</span>
+          </label>
+          <span class="ta-error-msg ta-consent-error"></span>
+        </div>
+        <button type="submit" class="ta-btn ta-btn-primary ta-btn-full ta-form-submit-btn">Получить предложение</button>
+        <input type="text" name="ta_website" class="ta-hp" tabindex="-1" autocomplete="off">
+      </form>
+    </div>
+  </div>
+
+  <!-- QUIZ MODAL -->
+  <div class="ta-modal" id="ta-modal-quiz" role="dialog" aria-modal="true" aria-label="Подбор тура квиз">
+    <div class="ta-modal-overlay"></div>
+    <div class="ta-modal-content ta-modal-quiz-content">
+      <button class="ta-modal-close" aria-label="Закрыть">&times;</button>
+      <div class="ta-quiz-progress"><div class="ta-quiz-bar" id="ta-quiz-bar"></div></div>
+      <div id="ta-quiz-container">
+        <!-- Step 1 -->
+        <div class="ta-quiz-step" data-step="1">
+          <h3 class="ta-h3">Какой отдых вам интересен?</h3>
+          <div class="ta-quiz-options">
+            <label class="ta-quiz-option"><input type="radio" name="q1" value="Пляжный отдых"><span>Пляжный отдых</span></label>
+            <label class="ta-quiz-option"><input type="radio" name="q1" value="Горящий тур"><span>Горящий тур</span></label>
+            <label class="ta-quiz-option"><input type="radio" name="q1" value="Семейный отдых"><span>Семейный отдых</span></label>
+            <label class="ta-quiz-option"><input type="radio" name="q1" value="Экскурсионный тур"><span>Экскурсионный тур</span></label>
+            <label class="ta-quiz-option"><input type="radio" name="q1" value="Пока не определился"><span>Пока не определился</span></label>
+          </div>
+        </div>
+        <!-- Step 2 -->
+        <div class="ta-quiz-step" data-step="2" style="display:none;">
+          <h3 class="ta-h3">Когда планируете поездку?</h3>
+          <div class="ta-quiz-options">
+            <label class="ta-quiz-option"><input type="radio" name="q2" value="В ближайшие 7 дней"><span>В ближайшие 7 дней</span></label>
+            <label class="ta-quiz-option"><input type="radio" name="q2" value="В течение месяца"><span>В течение месяца</span></label>
+            <label class="ta-quiz-option"><input type="radio" name="q2" value="Через 1–3 месяца"><span>Через 1–3 месяца</span></label>
+            <label class="ta-quiz-option"><input type="radio" name="q2" value="Позже"><span>Позже</span></label>
+            <label class="ta-quiz-option"><input type="radio" name="q2" value="Даты пока неизвестны"><span>Даты пока неизвестны</span></label>
+          </div>
+        </div>
+        <!-- Step 3 -->
+        <div class="ta-quiz-step" data-step="3" style="display:none;">
+          <h3 class="ta-h3">Сколько человек поедет?</h3>
+          <div class="ta-quiz-options">
+            <label class="ta-quiz-option"><input type="radio" name="q3" value="1 человек"><span>1 человек</span></label>
+            <label class="ta-quiz-option"><input type="radio" name="q3" value="2 человека"><span>2 человека</span></label>
+            <label class="ta-quiz-option"><input type="radio" name="q3" value="Семья с детьми"><span>Семья с детьми</span></label>
+            <label class="ta-quiz-option"><input type="radio" name="q3" value="Компания от 3 человек"><span>Компания от 3 человек</span></label>
+          </div>
+        </div>
+        <!-- Step 4 -->
+        <div class="ta-quiz-step" data-step="4" style="display:none;">
+          <h3 class="ta-h3">Какой ориентировочный бюджет на всех?</h3>
+          <div class="ta-quiz-options">
+            <label class="ta-quiz-option"><input type="radio" name="q4" value="До 500 000 ₸"><span>До 500 000 ₸</span></label>
+            <label class="ta-quiz-option"><input type="radio" name="q4" value="500 000–800 000 ₸"><span>500 000–800 000 ₸</span></label>
+            <label class="ta-quiz-option"><input type="radio" name="q4" value="800 000–1 200 000 ₸"><span>800 000–1 200 000 ₸</span></label>
+            <label class="ta-quiz-option"><input type="radio" name="q4" value="Более 1 200 000 ₸"><span>Более 1 200 000 ₸</span></label>
+            <label class="ta-quiz-option"><input type="radio" name="q4" value="Пока не определился"><span>Пока не определился</span></label>
+          </div>
+        </div>
+        <!-- Step 5 -->
+        <div class="ta-quiz-step" data-step="5" style="display:none;">
+          <h3 class="ta-h3">Откуда планируется вылет?</h3>
+          <div class="ta-quiz-options">
+            <label class="ta-quiz-option"><input type="radio" name="q5" value="Алматы"><span>Алматы</span></label>
+            <label class="ta-quiz-option"><input type="radio" name="q5" value="Астана"><span>Астана</span></label>
+            <label class="ta-quiz-option"><input type="radio" name="q5" value="Другой город"><span>Другой город</span></label>
+          </div>
+        </div>
+        <!-- Step 6 (Final) -->
+        <div class="ta-quiz-step ta-quiz-final" data-step="6" style="display:none;">
+          <h3 class="ta-h3">Куда отправить подходящие варианты?</h3>
+          <form id="ta-quiz-form" data-type="quiz" novalidate>
+            <div class="ta-form-group">
+              <label for="ta-qf-name">Ваше имя *</label>
+              <input type="text" id="ta-qf-name" class="ta-input" name="name" required>
+              <span class="ta-error-msg"></span>
+            </div>
+            <div class="ta-form-group">
+              <label for="ta-qf-phone">Телефон или WhatsApp *</label>
+              <input type="tel" id="ta-qf-phone" class="ta-input" name="phone" required>
+              <span class="ta-error-msg"></span>
+            </div>
+            <div class="ta-form-consent">
+              <label class="ta-checkbox-label">
+                <input type="checkbox" name="consent" required class="ta-checkbox">
+                <span>Даю согласие на обработку персональных данных</span>
+              </label>
+              <span class="ta-error-msg ta-consent-error"></span>
+            </div>
+            <button type="submit" class="ta-btn ta-btn-primary ta-btn-full ta-form-submit-btn">Получить подборку туров</button>
+            <input type="text" name="ta_website" class="ta-hp" tabindex="-1" autocomplete="off">
+          </form>
+        </div>
+      </div>
+      <div class="ta-quiz-nav" id="ta-quiz-nav">
+        <button type="button" class="ta-btn ta-btn-ghost" id="ta-quiz-prev" style="display:none;">Назад</button>
+        <button type="button" class="ta-btn ta-btn-primary" id="ta-quiz-next">Далее</button>
+      </div>
+      <div id="ta-quiz-success" style="display:none;" class="ta-success-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <p>Спасибо! Заявка принята. Менеджер свяжется с вами, уточнит детали и предложит подходящие варианты отдыха.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEGAL MODALS -->
+  <div class="ta-modal" id="ta-modal-legal" role="dialog" aria-modal="true" aria-label="Юридическая информация">
+    <div class="ta-modal-overlay"></div>
+    <div class="ta-modal-content ta-modal-legal-content">
+      <button class="ta-modal-close" aria-label="Закрыть">&times;</button>
+      <div id="ta-legal-body">
+        <!-- ПЕРЕД ЗАПУСКОМ РЕКЛАМЫ ЗАМЕНИТЬ ТЕКСТЫ ДОКУМЕНТОВ НА ЮРИДИЧЕСКИ ПРОВЕРЕННЫЕ И ДОБАВИТЬ РЕКВИЗИТЫ ТУРИСТИЧЕСКОГО АГЕНТСТВА. -->
+        <h3 class="ta-h3 ta-ta-left" id="ta-legal-title">Документ</h3>
+        <div class="ta-legal-text" id="ta-legal-text">
+          <p>Текст юридического документа будет здесь. Перед запуском рекламной кампании обязательно замените этот текст на юридически проверенный и добавьте все необходимые реквизиты туристического агентства.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<style>
+  /* ПЕРЕД ЗАПУСКОМ РЕКЛАМЫ ЗАМЕНИТЬ ТЕКСТЫ ДОКУМЕНТОВ НА ЮРИДИЧЕСКИ ПРОВЕРЕННЫЕ И ДОБАВИТЬ РЕКВИЗИТЫ ТУРИСТИЧЕСКОГО АГЕНТСТВА. */
+  #ta-premium-site {
+    --ta-bg-light: #F7F4EE;
+    --ta-white: #FFFFFF;
+    --ta-text-dark: #122027;
+    --ta-text-sec: #667177;
+    --ta-primary: #0E3B43;
+    --ta-accent: #1D8A8A;
+    --ta-gold: #D5A85C;
+    --ta-sand: #EDE3D2;
+    --ta-gradient: linear-gradient(135deg, #0E3B43, #1D8A8A);
+    --ta-font-h: 'Playfair Display', serif;
+    --ta-font-b: 'Inter', sans-serif;
+    --ta-error: #d32f2f;
+    --ta-success: #2e7d32;
+    font-family: var(--ta-font-b);
+    color: var(--ta-text-dark);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  #ta-premium-site *, #ta-premium-site *::before, #ta-premium-site *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  #ta-premium-site .ta-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  #ta-premium-site .ta-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+  #ta-premium-site .ta-hp { opacity: 0; position: absolute; height: 0; width: 0; z-index: -1; top: 0; left: 0; }
+  
+  /* Typography */
+  #ta-premium-site .ta-h1 { font-family: var(--ta-font-h); font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 700; color: var(--ta-white); line-height: 1.15; margin-bottom: 20px; max-width: 800px; }
+  #ta-premium-site .ta-h2 { font-family: var(--ta-font-h); font-size: clamp(2rem, 4vw, 3rem); font-weight: 600; color: var(--ta-text-dark); text-align: center; margin-bottom: 16px; }
+  #ta-premium-site .ta-h2-light { font-family: var(--ta-font-h); font-size: clamp(2rem, 4vw, 3rem); font-weight: 600; color: var(--ta-white); text-align: center; margin-bottom: 16px; }
+  #ta-premium-site .ta-h3 { font-family: var(--ta-font-h); font-size: 1.5rem; font-weight: 600; color: var(--ta-text-dark); margin-bottom: 12px; }
+  #ta-premium-site .ta-h4 { font-family: var(--ta-font-b); font-size: 1.1rem; font-weight: 600; color: var(--ta-text-dark); margin-bottom: 12px; }
+  #ta-premium-site .ta-ta-left { text-align: left; }
+  #ta-premium-site .ta-text-light { color: rgba(255,255,255,0.9); font-size: 1.125rem; max-width: 700px; margin: 0 auto 24px; }
+  #ta-premium-site .ta-text-light-sub { color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-top: 16px; }
+  #ta-premium-site .ta-section-sub { color: var(--ta-text-sec); font-size: 1.1rem; text-align: center; max-width: 600px; margin: 0 auto 40px; }
+  #ta-premium-site .ta-note-center { text-align: center; color: var(--ta-text-sec); font-size: 0.9rem; margin-top: 40px; font-style: italic; }
+  #ta-premium-site .ta-disclaimer { color: var(--ta-text-sec); font-size: 0.85rem; margin-top: 20px; max-width: 600px; margin-left: auto; margin-right: auto; }
+  #ta-premium-site .ta-text-center { text-align: center; }
+
+  /* Buttons */
+  #ta-premium-site .ta-btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; font-family: var(--ta-font-b); font-size: 1rem; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; text-decoration: none; min-height: 48px; }
+  #ta-premium-site .ta-btn:focus-visible { outline: 2px solid var(--ta-accent); outline-offset: 2px; }
+  #ta-premium-site .ta-btn-primary { background: var(--ta-gradient); color: var(--ta-white); }
+  #ta-premium-site .ta-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(14, 59, 67, 0.3); }
+  #ta-premium-site .ta-btn-gold { background: var(--ta-gold); color: var(--ta-text-dark); }
+  #ta-premium-site .ta-btn-gold:hover { background: #c49a4e; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(213, 168, 92, 0.4); }
+  #ta-premium-site .ta-btn-outline { background: transparent; color: var(--ta-white); border: 1px solid rgba(255,255,255,0.5); }
+  #ta-premium-site .ta-btn-outline:hover { background: rgba(255,255,255,0.1); border-color: var(--ta-white); }
+  #ta-premium-site .ta-btn-ghost { background: transparent; color: var(--ta-text-sec); border: 1px solid #ccc; }
+  #ta-premium-site .ta-btn-ghost:hover { border-color: var(--ta-text-dark); color: var(--ta-text-dark); }
+  #ta-premium-site .ta-btn-sm { padding: 10px 20px; font-size: 0.9rem; min-height: 42px; }
+  #ta-premium-site .ta-btn-full { width: 100%; }
+  #ta-premium-site .ta-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none !important; }
+
+  /* Sections */
+  #ta-premium-site .ta-section { padding: 100px 0; }
+  #ta-premium-site .ta-bg-light { background-color: var(--ta-bg-light); }
+  #ta-premium-site .ta-bg-white { background-color: var(--ta-white); }
+  #ta-premium-site .ta-bg-dark { background: var(--ta-gradient); }
+  #ta-premium-site .ta-bg-sand { background-color: var(--ta-sand); }
+
+  /* Header */
+  #ta-premium-site .ta-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: transparent; transition: background 0.3s ease, box-shadow 0.3s ease; padding: 15px 0; }
+  #ta-premium-site .ta-header.scrolled { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); box-shadow: 0 2px 20px rgba(0,0,0,0.05); }
+  #ta-premium-site .ta-header-inner { display: flex; align-items: center; justify-content: space-between; }
+  #ta-premium-site .ta-logo { text-decoration: none; display: flex; flex-direction: column; }
+  #ta-premium-site .ta-logo-name { font-family: var(--ta-font-h); font-size: 1.5rem; font-weight: 700; color: var(--ta-white); transition: color 0.3s; }
+  #ta-premium-site .ta-logo-sub { font-size: 0.75rem; color: rgba(255,255,255,0.8); transition: color 0.3s; letter-spacing: 0.5px; }
+  #ta-premium-site .ta-header.scrolled .ta-logo-name { color: var(--ta-text-dark); }
+  #ta-premium-site .ta-header.scrolled .ta-logo-sub { color: var(--ta-text-sec); }
+  #ta-premium-site .ta-nav { display: flex; align-items: center; gap: 24px; }
+  #ta-premium-site .ta-nav-list { display: flex; list-style: none; gap: 20px; }
+  #ta-premium-site .ta-nav-link { text-decoration: none; font-size: 0.9rem; font-weight: 500; color: rgba(255,255,255,0.9); transition: color 0.3s; }
+  #ta-premium-site .ta-nav-link:hover { color: var(--ta-gold); }
+  #ta-premium-site .ta-header.scrolled .ta-nav-link { color: var(--ta-text-dark); }
+  #ta-premium-site .ta-header.scrolled .ta-nav-link:hover { color: var(--ta-accent); }
+  #ta-premium-site .ta-header-cta { padding: 10px 20px; font-size: 0.9rem; }
+  #ta-premium-site .ta-burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 5px; z-index: 1001; }
+  #ta-premium-site .ta-burger span { display: block; width: 24px; height: 2px; background: var(--ta-white); transition: all 0.3s; }
+  #ta-premium-site .ta-header.scrolled .ta-burger span { background: var(--ta-text-dark); }
+
+  /* Hero */
+  #ta-premium-site .ta-hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 80px; padding-bottom: 180px; overflow: hidden; }
+  #ta-premium-site .ta-hero-bg { position: absolute; inset: 0; z-index: 0; }
+  #ta-premium-site .ta-hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+  #ta-premium-site .ta-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(14, 59, 67, 0.7), rgba(14, 59, 67, 0.85)); }
+  #ta-premium-site .ta-hero-content { position: relative; z-index: 1; }
+  #ta-premium-site .ta-hero-sub { color: rgba(255,255,255,0.9); font-size: 1.25rem; max-width: 600px; margin-bottom: 32px; }
+  #ta-premium-site .ta-hero-btns { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 48px; }
+  #ta-premium-site .ta-hero-trust { display: flex; gap: 32px; flex-wrap: wrap; }
+  #ta-premium-site .ta-trust-item { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.8); font-size: 0.9rem; }
+  #ta-premium-site .ta-trust-icon { width: 20px; height: 20px; color: var(--ta-gold); flex-shrink: 0; }
+  #ta-premium-site .ta-hero-form-wrap { position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; transform: translateY(50%); }
+  #ta-premium-site .ta-form-glass { background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); border-radius: 16px; padding: 32px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.5); }
+  #ta-premium-site .ta-form-glass-title { text-align: center; margin-bottom: 20px; color: var(--ta-text-dark); }
+  #ta-premium-site .ta-form-glass-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 20px; }
+
+  /* Inputs & Forms */
+  #ta-premium-site .ta-form-group { margin-bottom: 16px; position: relative; }
+  #ta-premium-site .ta-form-group label { display: block; font-size: 0.9rem; font-weight: 500; color: var(--ta-text-sec); margin-bottom: 6px; }
+  #ta-premium-site .ta-input, #ta-premium-site .ta-select, #ta-premium-site .ta-textarea { width: 100%; padding: 14px 16px; font-family: var(--ta-font-b); font-size: 16px; color: var(--ta-text-dark); background: var(--ta-bg-light); border: 1px solid #e0e0e0; border-radius: 8px; transition: border-color 0.3s, box-shadow 0.3s; outline: none; }
+  #ta-premium-site .ta-input:focus, #ta-premium-site .ta-select:focus, #ta-premium-site .ta-textarea:focus { border-color: var(--ta-accent); box-shadow: 0 0 0 3px rgba(29, 138, 138, 0.1); }
+  #ta-premium-site .ta-input.ta-error, #ta-premium-site .ta-select.ta-error { border-color: var(--ta-error); }
+  #ta-premium-site .ta-error-msg { display: none; color: var(--ta-error); font-size: 0.8rem; margin-top: 4px; }
+  #ta-premium-site .ta-error-msg.visible { display: block; }
+  #ta-premium-site .ta-textarea { resize: vertical; }
+  #ta-premium-site .ta-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; }
+  #ta-premium-site .ta-full { grid-column: 1 / -1; }
+  #ta-premium-site .ta-form-consent { margin: 20px 0; }
+  #ta-premium-site .ta-checkbox-label { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; font-size: 0.9rem; color: var(--ta-text-sec); }
+  #ta-premium-site .ta-checkbox { margin-top: 4px; accent-color: var(--ta-accent); width: 18px; height: 18px; flex-shrink: 0; }
+  #ta-premium-site .ta-form-inline { display: flex; gap: 16px; align-items: flex-end; flex-wrap: wrap; }
+  #ta-premium-site .ta-form-inline .ta-form-group { flex: 1; min-width: 200px; margin-bottom: 0; }
+
+  /* Cards */
+  #ta-premium-site .ta-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  #ta-premium-site .ta-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  #ta-premium-site .ta-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  #ta-premium-site .ta-card { background: var(--ta-white); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; }
+  #ta-premium-site .ta-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
+  #ta-premium-site .ta-card-img-wrap { height: 220px; overflow: hidden; }
+  #ta-premium-site .ta-card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+  #ta-premium-site .ta-card:hover .ta-card-img-wrap img { transform: scale(1.05); }
+  #ta-premium-site .ta-card-body { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
+  #ta-premium-site .ta-card-title { font-family: var(--ta-font-h); font-size: 1.4rem; margin-bottom: 12px; }
+  #ta-premium-site .ta-card-text { color: var(--ta-text-sec); font-size: 0.95rem; margin-bottom: 16px; flex-grow: 1; }
+  #ta-premium-site .ta-card-meta { font-size: 0.85rem; color: var(--ta-accent); font-weight: 500; margin-bottom: 8px; }
+  #ta-premium-site .ta-card-note { font-size: 0.8rem; color: var(--ta-text-sec); font-style: italic; margin-bottom: 16px; }
+
+  /* Type Cards */
+  #ta-premium-site .ta-type-card { display: flex; border-radius: 12px; overflow: hidden; background: var(--ta-bg-light); box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: transform 0.3s; }
+  #ta-premium-site .ta-type-card:hover { transform: translateY(-3px); }
+  #ta-premium-site .ta-type-img { width: 40%; height: 300px; overflow: hidden; }
+  #ta-premium-site .ta-type-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+  #ta-premium-site .ta-type-card:hover .ta-type-img img { transform: scale(1.05); }
+  #ta-premium-site .ta-type-body { width: 60%; padding: 32px; display: flex; flex-direction: column; justify-content: center; }
+
+  /* Features */
+  #ta-premium-site .ta-features { margin-top: 60px; }
+  #ta-premium-site .ta-feature { display: flex; gap: 20px; margin-bottom: 32px; }
+  #ta-premium-site .ta-feature-icon { width: 48px; height: 48px; background: var(--ta-sand); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--ta-gold); }
+  #ta-premium-site .ta-feature-icon svg { width: 24px; height: 24px; }
+  #ta-premium-site .ta-feature strong { display: block; margin-bottom: 6px; color: var(--ta-text-dark); }
+  #ta-premium-site .ta-feature p { color: var(--ta-text-sec); font-size: 0.95rem; }
+
+  /* Steps */
+  #ta-premium-site .ta-steps { display: flex; justify-content: space-between; margin-top: 60px; position: relative; }
+  #ta-premium-site .ta-steps::before { content: ''; position: absolute; top: 30px; left: 50px; right: 50px; height: 2px; background: #e0e0e0; z-index: 0; }
+  #ta-premium-site .ta-step { position: relative; z-index: 1; text-align: center; max-width: 180px; }
+  #ta-premium-site .ta-step-num { width: 60px; height: 60px; background: var(--ta-white); border: 2px solid var(--ta-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--ta-font-h); font-size: 1.2rem; font-weight: 700; color: var(--ta-accent); margin: 0 auto 20px; transition: background 0.3s, color 0.3s; }
+  #ta-premium-site .ta-step p { color: var(--ta-text-sec); font-size: 0.9rem; }
+
+  /* Family */
+  #ta-premium-site .ta-family-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  #ta-premium-site .ta-family-img { border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); height: 100%; min-height: 400px; }
+  #ta-premium-site .ta-family-img img { width: 100%; height: 100%; object-fit: cover; }
+  #ta-premium-site .ta-family-list { list-style: none; margin: 24px 0 32px; }
+  #ta-premium-site .ta-family-list li { padding: 8px 0; padding-left: 30px; position: relative; color: var(--ta-text-dark); }
+  #ta-premium-site .ta-family-list li::before { content: '✓'; position: absolute; left: 0; color: var(--ta-accent); font-weight: 700; }
+
+  /* Benefit Cards */
+  #ta-premium-site .ta-benefit-card { background: var(--ta-white); padding: 32px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05); }
+  #ta-premium-site .ta-benefit-icon { width: 56px; height: 56px; background: var(--ta-sand); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--ta-gold); }
+  #ta-premium-site .ta-benefit-icon svg { width: 28px; height: 28px; }
+  #ta-premium-site .ta-benefit-card p { color: var(--ta-text-sec); font-size: 0.95rem; margin-top: 8px; }
+
+  /* FAQ */
+  #ta-premium-site .ta-faq-container { max-width: 800px; margin: 0 auto; }
+  #ta-premium-site .ta-faq-list { display: flex; flex-direction: column; gap: 12px; margin-top: 40px; }
+  #ta-premium-site .ta-faq-item { background: var(--ta-bg-light); border-radius: 8px; overflow: hidden; }
+  #ta-premium-site .ta-faq-btn { width: 100%; background: none; border: none; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left; font-family: var(--ta-font-b); font-size: 1rem; font-weight: 500; color: var(--ta-text-dark); }
+  #ta-premium-site .ta-faq-btn:focus-visible { outline: 2px solid var(--ta-accent); outline-offset: -2px; }
+  #ta-premium-site .ta-faq-arrow { width: 20px; height: 20px; transition: transform 0.3s; flex-shrink: 0; margin-left: 16px; color: var(--ta-text-sec); }
+  #ta-premium-site .ta-faq-item.active .ta-faq-arrow { transform: rotate(180deg); }
+  #ta-premium-site .ta-faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding 0.3s ease-out; padding: 0 24px; }
+  #ta-premium-site .ta-faq-item.active .ta-faq-content { max-height: 500px; padding: 0 24px 20px; }
+  #ta-premium-site .ta-faq-content p { color: var(--ta-text-sec); font-size: 0.95rem; }
+
+  /* Footer */
+  #ta-premium-site .ta-footer { background: var(--ta-primary); color: rgba(255,255,255,0.8); padding: 60px 0 30px; }
+  #ta-premium-site .ta-footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  #ta-premium-site .ta-footer-logo { color: var(--ta-white); font-size: 1.5rem; }
+  #ta-premium-site .ta-footer-sub { color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-bottom: 20px; }
+  #ta-premium-site .ta-footer-link { display: block; color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; margin-bottom: 8px; transition: color 0.3s; }
+  #ta-premium-site .ta-footer-link:hover { color: var(--ta-gold); }
+  #ta-premium-site .ta-footer-socials { display: flex; gap: 12px; margin-top: 16px; }
+  #ta-premium-site .ta-social-btn { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: var(--ta-white); transition: background 0.3s; }
+  #ta-premium-site .ta-social-btn svg { width: 20px; height: 20px; }
+  #ta-premium-site .ta-social-btn:hover { background: var(--ta-gold); color: var(--ta-text-dark); }
+  #ta-premium-site .ta-footer-copy { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+
+  /* Floating WA */
+  #ta-premium-site .ta-wa-float { position: fixed; bottom: 24px; right: 24px; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); z-index: 999; transition: transform 0.3s; color: white; }
+  #ta-premium-site .ta-wa-float svg { width: 32px; height: 32px; }
+  #ta-premium-site .ta-wa-float:hover { transform: scale(1.1); }
+
+  /* Modals */
+  #ta-premium-site .ta-modal { display: none; position: fixed; inset: 0; z-index: 10000; align-items: center; justify-content: center; padding: 20px; }
+  #ta-premium-site .ta-modal.active { display: flex; }
+  #ta-premium-site .ta-modal-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); }
+  #ta-premium-site .ta-modal-content { position: relative; background: var(--ta-white); border-radius: 16px; padding: 40px; width: 100%; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+  #ta-premium-site .ta-modal-form-content { max-width: 600px; }
+  #ta-premium-site .ta-modal-quiz-content { max-width: 500px; }
+  #ta-premium-site .ta-modal-legal-content { max-width: 700px; }
+  #ta-premium-site .ta-modal-close { position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 2rem; color: var(--ta-text-sec); cursor: pointer; line-height: 1; }
+  #ta-premium-site .ta-modal-close:hover { color: var(--ta-text-dark); }
+  #ta-premium-site .ta-form-sub { color: var(--ta-text-sec); margin-bottom: 24px; }
+  #ta-premium-site .ta-choice-tag { display: inline-block; background: var(--ta-sand); color: var(--ta-text-dark); padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
+
+  /* Quiz */
+  #ta-premium-site .ta-quiz-progress { width: 100%; height: 4px; background: #eee; border-radius: 2px; margin-bottom: 32px; overflow: hidden; }
+  #ta-premium-site .ta-quiz-bar { height: 100%; background: var(--ta-gradient); width: 16.66%; transition: width 0.3s ease; }
+  #ta-premium-site .ta-quiz-options { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
+  #ta-premium-site .ta-quiz-option { display: flex; align-items: center; padding: 16px 20px; border: 1px solid #e0e0e0; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
+  #ta-premium-site .ta-quiz-option:hover { border-color: var(--ta-accent); background: rgba(29, 138, 138, 0.05); }
+  #ta-premium-site .ta-quiz-option input { display: none; }
+  #ta-premium-site .ta-quiz-option:has(input:checked) { border-color: var(--ta-accent); background: rgba(29, 138, 138, 0.1); font-weight: 500; }
+  #ta-premium-site .ta-quiz-nav { display: flex; justify-content: space-between; margin-top: 32px; }
+  #ta-premium-site .ta-success-box { text-align: center; padding: 40px 20px; }
+  #ta-premium-site .ta-success-box svg { width: 64px; height: 64px; color: var(--ta-success); margin-bottom: 20px; }
+  #ta-premium-site .ta-success-box p { font-size: 1.1rem; color: var(--ta-text-dark); max-width: 400px; margin: 0 auto; }
+  #ta-premium-site .ta-legal-text { color: var(--ta-text-sec); font-size: 0.95rem; line-height: 1.8; white-space: pre-wrap; }
+
+  /* Animations */
+  #ta-premium-site .ta-animate { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+  #ta-premium-site .ta-visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    #ta-premium-site .ta-animate { transition: none !important; transform: none !important; opacity: 1 !important; }
+    #ta-premium-site .ta-card, #ta-premium-site .ta-type-card, #ta-premium-site .ta-btn { transition: none !important; }
+    #ta-premium-site .ta-card-img-wrap img, #ta-premium-site .ta-type-img img { transition: none !important; }
+  }
+
+  /* Responsive */
+  @media (max-width: 1200px) {
+    #ta-premium-site .ta-grid-4 { grid-template-columns: repeat(2, 1fr); }
+    #ta-premium-site .ta-form-glass-grid { grid-template-columns: repeat(2, 1fr); }
+    #ta-premium-site .ta-steps { flex-wrap: wrap; justify-content: center; gap: 20px; }
+    #ta-premium-site .ta-steps::before { display: none; }
+    #ta-premium-site .ta-step { max-width: 150px; }
+  }
+  @media (max-width: 960px) {
+    #ta-premium-site .ta-family-grid { grid-template-columns: 1fr; gap: 40px; }
+    #ta-premium-site .ta-family-img { min-height: 300px; }
+    #ta-premium-site .ta-footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    #ta-premium-site .ta-section { padding: 60px 0; }
+    #ta-premium-site .ta-nav { position: fixed; top: 0; right: -100%; width: 80%; max-width: 320px; height: 100vh; background: var(--ta-white); flex-direction: column; align-items: flex-start; padding: 80px 30px 30px; box-shadow: -5px 0 30px rgba(0,0,0,0.1); transition: right 0.3s ease; z-index: 999; overflow-y: auto; }
+    #ta-premium-site .ta-nav.open { right: 0; }
+    #ta-premium-site .ta-nav-list { flex-direction: column; gap: 0; width: 100%; margin-bottom: 24px; }
+    #ta-premium-site .ta-nav-link { display: block; padding: 12px 0; color: var(--ta-text-dark); border-bottom: 1px solid #eee; }
+    #ta-premium-site .ta-burger { display: flex; }
+    #ta-premium-site .ta-hero { padding-bottom: 220px; }
+    #ta-premium-site .ta-hero-form-wrap { position: relative; transform: none; margin-top: 40px; }
+    #ta-premium-site .ta-form-glass-grid { grid-template-columns: 1fr; }
+    #ta-premium-site .ta-grid-2 { grid-template-columns: 1fr; }
+    #ta-premium-site .ta-type-card { flex-direction: column; }
+    #ta-premium-site .ta-type-img { width: 100%; height: 200px; }
+    #ta-premium-site .ta-type-body { width: 100%; }
+    #ta-premium-site .ta-form-grid { grid-template-columns: 1fr; }
+    #ta-premium-site .ta-footer-grid { grid-template-columns: 1fr; gap: 30px; }
+    #ta-premium-site .ta-wa-float { bottom: 16px; right: 16px; width: 56px; height: 56px; }
+    #ta-premium-site .ta-wa-float svg { width: 28px; height: 28px; }
+  }
+  @media (max-width: 480px) {
+    #ta-premium-site .ta-container { padding: 0 16px; }
+    #ta-premium-site .ta-modal-content { padding: 24px; }
+    #ta-premium-site .ta-grid-3 { grid-template-columns: 1fr; }
+    #ta-premium-site .ta-hero-trust { flex-direction: column; gap: 16px; }
+    #ta-premium-site .ta-form-inline { flex-direction: column; }
+    #ta-premium-site .ta-form-inline .ta-btn { width: 100%; }
+    #ta-premium-site .ta-wa-float { bottom: 12px; right: 12px; width: 52px; height: 52px; }
+  }
+  @media (max-width: 360px) {
+    #ta-premium-site .ta-h1 { font-size: 2.2rem; }
+    #ta-premium-site .ta-h2, #ta-premium-site .ta-h2-light { font-size: 1.8rem; }
+  }
+</style>
+
+<script>
+(function() {
+  'use strict';
+  
+  // State & Config
+  const taState = {
+    destination: '',
+    holidayType: '',
+    formType: 'main_form',
+    quizAnswers: {},
+    utm: {},
+    formOpenTime: null
+  };
+
+  // UTM Parser
+  (function parseUtm() {
+    const params = new URLSearchParams(window.location.search);
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(key => {
+      if (params.get(key)) taState.utm[key] = params.get(key);
+    });
+  })();
+
+  // Analytics Tracker
+  window.taTrackEvent = function(eventName, eventData) {
+    eventData = eventData || {};
+    try { if (typeof gtag === 'function') gtag('event', eventName, eventData); } catch(e) {}
+    try { if (typeof ym === 'function') { const id = window.yaCounterXXXXX ? window.yaCounterXXXXX.id : 0; if(id) ym(id, 'reachGoal', eventName, eventData); } } catch(e) {}
+    try { if (typeof fbq === 'function') fbq('track', eventName, eventData); } catch(e) {}
+  };
+
+  // Scroll Tracker
+  let scroll50 = false, scroll90 = false;
+  window.addEventListener('scroll', function() {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    const p = h > 0 ? (window.scrollY / h) * 100 : 0;
+    if (p >= 50 && !scroll50) { scroll50 = true; taTrackEvent('scroll_50'); }
+    if (p >= 90 && !scroll90) { scroll90 = true; taTrackEvent('scroll_90'); }
+  });
+
+  // DOM Elements
+  const header = document.getElementById('ta-header');
+  const burger = document.getElementById('ta-burger');
+  const nav = document.getElementById('ta-nav');
+  const root = document.getElementById('ta-premium-site');
+  
+  // Dynamic Contacts Update
+  function updateContacts() {
+    const phoneLinks = root.querySelectorAll('#ta-footer-phone, .ta-wa-float');
+    const waLinks = root.querySelectorAll('#ta-footer-wa, .ta-wa-float');
+    const tgLinks = root.querySelectorAll('#ta-footer-tg');
+    const emailLinks = root.querySelectorAll('#ta-footer-email');
+    
+    phoneLinks.forEach(el => { if(el.tagName === 'A') el.href = 'tel:' + TA_CONFIG.phone.replace(/\D/g,''); else el.href = 'tel:' + TA_CONFIG.phone.replace(/\D/g,''); });
+    waLinks.forEach(el => el.href = TA_CONFIG.whatsappUrl);
+    tgLinks.forEach(el => el.href = TA_CONFIG.telegramUrl);
+    emailLinks.forEach(el => el.href = 'mailto:' + TA_CONFIG.email);
+    
+    const phoneText = root.querySelector('#ta-footer-phone');
+    if(phoneText) phoneText.textContent = TA_CONFIG.phone;
+    const emailText = root.querySelector('#ta-footer-email');
+    if(emailText) emailText.textContent = TA_CONFIG.email;
+  }
+
+  // Header Scroll
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 50) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  });
+
+  // Mobile Menu
+  burger.addEventListener('click', function() {
+    const isOpen = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', isOpen);
+    if (isOpen) burger.querySelector('span:nth-child(1)').style.transform = 'rotate(45deg) translate(5px, 5px)';
+    else burger.querySelector('span:nth-child(1)').style.transform = 'none';
+  });
+  
+  document.addEventListener('click', function(e) {
+    if (nav.classList.contains('open') && !nav.contains(e.target) && !burger.contains(e.target)) {
+      nav.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.querySelector('span:nth-child(1)').style.transform = 'none';
+    }
+  });
+
+  nav.querySelectorAll('.ta-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.querySelector('span:nth-child(1)').style.transform = 'none';
+    });
+  });
+
+  // Modals
+  function openModal(id) {
+    const modal = document.getElementById(id);
+    if (!modal) return;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    taState.formOpenTime = Date.now();
+    const focusable = modal.querySelector('button, input, select, textarea, a[href]');
+    if (focusable) focusable.focus();
+  }
+
+  function closeModal(id) {
+    const modal = document.getElementById(id);
+    if (!modal) return;
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Close modals on overlay click or Escape
+  root.querySelectorAll('.ta-modal-overlay, .ta-modal-close').forEach(el => {
+    el.addEventListener('click', function() {
+      closeModal(this.closest('.ta-modal').id);
+    });
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      root.querySelectorAll('.ta-modal.active').forEach(m => closeModal(m.id));
+    }
+  });
+
+  // Global Action Listener
+  root.addEventListener('click', function(e) {
+    const btn = e.target.closest('[data-action]');
+    if (!btn) return;
+    const action = btn.dataset.action;
+    if (btn.tagName === 'A') e.preventDefault();
+    
+    if (action === 'open-quiz') {
+      taTrackEvent('quiz_start');
+      resetQuiz();
+      openModal('ta-modal-quiz');
+    } else if (action === 'open-form') {
+      taTrackEvent('form_start');
+      taState.destination = btn.dataset.dest || '';
+      taState.holidayType = btn.dataset.holiday || '';
+      taState.formType = btn.dataset.formType || 'main_form';
+      populateMainForm();
+      openModal('ta-modal-form');
+    } else if (action === 'open-legal') {
+      const doc = btn.dataset.doc;
+      showLegalDoc(doc);
+      openModal('ta-modal-legal');
+    }
+  });
+
+  // Main Form Logic
+  function populateMainForm() {
+    const form = document.getElementById('ta-main-form');
+    form.reset();
+    form.querySelectorAll('.ta-error').forEach(el => el.classList.remove('ta-error'));
+    form.querySelectorAll('.ta-error-msg').forEach(el => el.classList.remove('visible'));
+    
+    const destSelect = form.querySelector('[name="destination"]');
+    const typeSelect = form.querySelector('[name="holidayType"]');
+    if (taState.destination && destSelect) destSelect.value = taState.destination;
+    if (taState.holidayType && typeSelect) typeSelect.value = taState.holidayType;
+    form.dataset.type = taState.formType;
+
+    const tag = document.getElementById('ta-choice-tag');
+    let tagText = [];
+    if (taState.destination) tagText.push(taState.destination);
+    if (taState.holidayType) tagText.push(taState.holidayType);
+    tag.textContent = tagText.length ? 'Ваш выбор: ' + tagText.join(' · ') : '';
+    tag.style.display = tagText.length ? 'inline-block' : 'none';
+  }
+
+  // Quiz Logic
+  let currentStep = 1;
+  const totalSteps = 6;
+
+  function resetQuiz() {
+    currentStep = 1;
+    taState.quizAnswers = {};
+    const container = document.getElementById('ta-quiz-container');
+    const nav = document.getElementById('ta-quiz-nav');
+    const success = document.getElementById('ta-quiz-success');
+    container.style.display = 'block';
+    nav.style.display = 'flex';
+    success.style.display = 'none';
+    document.getElementById('ta-quiz-form').reset();
+    updateQuizUI();
+  }
+
+  function updateQuizUI() {
+    document.querySelectorAll('.ta-quiz-step').forEach(s => s.style.display = 'none');
+    const activeStep = document.querySelector(`.ta-quiz-step[data-step="${currentStep}"]`);
+    if (activeStep) activeStep.style.display = 'block';
+    
+    document.getElementById('ta-quiz-bar').style.width = ((currentStep / totalSteps) * 100) + '%';
+    document.getElementById('ta-quiz-prev').style.display = currentStep === 1 ? 'none' : 'inline-flex';
+    document.getElementById('ta-quiz-next').style.display = currentStep === totalSteps ? 'none' : 'inline-flex';
+    
+    if (currentStep === 1) taTrackEvent('quiz_step', { step: 1 });
+  }
+
+  document.getElementById('ta-quiz-next').addEventListener('click', function() {
+    const selected = document.querySelector(`.ta-quiz-step[data-step="${currentStep}"] input:checked`);
+    if (!selected) return; // Basic validation, could add error styling
+    
+    taState.quizAnswers['q' + currentStep] = selected.value;
+    taTrackEvent('quiz_step', { step: currentStep + 1 });
+    currentStep++;
+    updateQuizUI();
+  });
+
+  document.getElementById('ta-quiz-prev').addEventListener('click', function() {
+    if (currentStep > 1) {
+      currentStep--;
+      updateQuizUI();
+    }
+  });
+
+  // Validation Helpers
+  function validateField(input) {
+    const val = input.type === 'checkbox' ? '' : String(input.value || '').trim();
+    let msg = '';
+
+    if (input.required) {
+      if (input.type === 'checkbox' && !input.checked) msg = 'Необходимо дать согласие';
+      else if (input.type !== 'checkbox' && !val) msg = 'Заполните это поле';
+    }
+    if (!msg && input.name === 'name' && val.length < 2) {
+      msg = 'Введите не менее 2 символов';
+    } else if (!msg && input.name === 'phone') {
+      const digits = val.replace(/\D/g, '');
+      if (!/^[+\d\s\-\(\)]+$/.test(val) || digits.length < 10) msg = 'Введите корректный номер телефона (не менее 10 цифр)';
+    }
+
+    const holder = input.closest('.ta-form-group, .ta-form-consent');
+    const errEl = holder ? holder.querySelector('.ta-error-msg') : null;
+    if (msg) {
+      input.classList.add('ta-error');
+      if (errEl) { errEl.textContent = msg; errEl.classList.add('visible'); }
+      return false;
+    } else {
+      input.classList.remove('ta-error');
+      if (errEl) { errEl.textContent = ''; errEl.classList.remove('visible'); }
+      return true;
+    }
+  }
+
+  function validateForm(form) {
+    let isValid = true;
+    let firstError = null;
+    const requiredFields = form.querySelectorAll('[required]');
+    
+    requiredFields.forEach(field => {
+      if (!validateField(field)) {
+        isValid = false;
+        if (!firstError) firstError = field;
+      }
+    });
+
+    if (firstError) firstError.focus();
+    return isValid;
+  }
+
+  // Form Submission Handler
+  async function handleFormSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('.ta-form-submit-btn, button[type="submit"]');
+    
+    // Honeypot
+    if (form.querySelector('.ta-hp').value) return;
+
+    // Min time check (2 seconds)
+    if (taState.formOpenTime && (Date.now() - taState.formOpenTime < 2000)) {
+      alert('Форма отправлена слишком быстро. Пожалуйста, подождите.');
+      return;
+    }
+
+    if (!validateForm(form)) return;
+
+    // Block button
+    const originalText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Отправляем…';
+    taTrackEvent('form_submit');
+
+    // Prepare Payload
+    const fd = new FormData(form);
+    const payload = {
+      formType: form.dataset.type,
+      name: fd.get('name').trim(),
+      phone: fd.get('phone').trim(),
+      destination: fd.get('destination') || taState.destination || taState.quizAnswers.q1 || '',
+      holidayType: fd.get('holidayType') || taState.holidayType || '',
+      departureCity: fd.get('departureCity') || taState.quizAnswers.q5 || '',
+      travelDate: fd.get('travelDate') || taState.quizAnswers.q2 || '',
+      adults: fd.get('adults') || (taState.quizAnswers.q3 === '1 человек' ? 1 : (taState.quizAnswers.q3 === '2 человека' ? 2 : '')),
+      children: fd.get('children') || (taState.quizAnswers.q3 === 'Семья с детьми' ? 'Да' : ''),
+      peopleCount: fd.get('peopleCount') || taState.quizAnswers.q3 || '',
+      budget: fd.get('budget') || taState.quizAnswers.q4 || '',
+      comment: fd.get('comment') || '',
+      quizAnswers: taState.quizAnswers,
+      source: "tourism_agency_website",
+      pageUrl: window.location.href,
+      referrer: document.referrer,
+      utmSource: taState.utm.utm_source || '',
+      utmMedium: taState.utm.utm_medium || '',
+      utmCampaign: taState.utm.utm_campaign || '',
+      utmContent: taState.utm.utm_content || '',
+      utmTerm: taState.utm.utm_term || '',
+      createdAt: new Date().toISOString()
+    };
+
+    // Webhook Check
+    if (!TA_CONFIG.webhookUrl) {
+      btn.disabled = false;
+      btn.textContent = originalText;
+      alert('Демонстрационный режим: форма заполнена правильно, но отправка заявок ещё не подключена.');
+      console.log('Payload to send:', payload);
+      taTrackEvent('form_error', { reason: 'demo_mode' });
+      return;
+    }
+
+    try {
+      const res = await fetch(TA_CONFIG.webhookUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (!res.ok) throw new Error('HTTP error ' + res.status);
+
+      taTrackEvent('form_success');
+      form.reset();
+      
+      // Specific success UI
+      if (form.dataset.type === 'quiz') {
+        document.getElementById('ta-quiz-container').style.display = 'none';
+        document.getElementById('ta-quiz-nav').style.display = 'none';
+        document.getElementById('ta-quiz-success').style.display = 'block';
+      } else {
+        form.innerHTML = '<div class="ta-success-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><p>Спасибо! Заявка принята. Менеджер свяжется с вами, уточнит детали и предложит подходящие варианты отдыха.</p></div>';
+      }
+    } catch (err) {
+      console.error(err);
+      taTrackEvent('form_error', { reason: err.message });
+      btn.disabled = false;
+      btn.textContent = originalText;
+      
+      let errDiv = form.querySelector('.ta-submit-error');
+      if (!errDiv) {
+        errDiv = document.createElement('div');
+        errDiv.className = 'ta-submit-error';
+        errDiv.style.cssText = 'color: #d32f2f; margin-top: 16px; text-align: center; font-size: 0.9rem;';
+        form.appendChild(errDiv);
+      }
+      errDiv.innerHTML = 'Не удалось отправить заявку. Пожалуйста, попробуйте ещё раз или напишите в <a href="' + TA_CONFIG.whatsappUrl + '" target="_blank" rel="noopener noreferrer" style="color: #1D8A8A; font-weight: 600;">WhatsApp</a>.';
+    }
+  }
+
+  document.getElementById('ta-main-form').addEventListener('submit', handleFormSubmit);
+  document.getElementById('ta-quiz-form').addEventListener('submit', handleFormSubmit);
+  document.getElementById('ta-hero-form').addEventListener('submit', handleFormSubmit);
+  document.getElementById('ta-hot-form').addEventListener('submit', handleFormSubmit);
+
+  // Inline validation listeners
+  root.querySelectorAll('.ta-input[required], .ta-checkbox[required]').forEach(el => {
+    const evtType = el.type === 'checkbox' ? 'change' : 'blur';
+    el.addEventListener(evtType, () => validateField(el));
+  });
+
+  // Legal Docs
+  const legalTexts = {
+    privacy: 'Политика конфиденциальности\n\nТекст политики конфиденциальности. Перед запуском рекламы замените этот текст на юридически проверенный.',
+    consent: 'Согласие на обработку персональных данных\n\nТекст согласия. Перед запуском рекламы замените этот текст на юридически проверенный.',
+    terms: 'Условия бронирования\n\nТекст условий бронирования. Перед запуском рекламы замените этот текст на юридически проверенный.'
+  };
+  function showLegalDoc(doc) {
+    document.getElementById('ta-legal-title').textContent = legalTexts[doc].split('\n')[0];
+    document.getElementById('ta-legal-text').textContent = legalTexts[doc];
+  }
+
+  // FAQ Accordion
+  root.querySelectorAll('.ta-faq-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const item = this.closest('.ta-faq-item');
+      const isActive = item.classList.contains('active');
+      
+      // Close all
+      root.querySelectorAll('.ta-faq-item').forEach(i => {
+        i.classList.remove('active');
+        i.querySelector('.ta-faq-btn').setAttribute('aria-expanded', 'false');
+        i.querySelector('.ta-faq-content').setAttribute('aria-hidden', 'true');
+      });
+
+      // Open clicked if it was closed
+      if (!isActive) {
+        item.classList.add('active');
+        this.setAttribute('aria-expanded', 'true');
+        item.querySelector('.ta-faq-content').setAttribute('aria-hidden', 'false');
+      }
+    });
+  });
+
+  // Scroll Animations (IntersectionObserver)
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('ta-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    root.querySelectorAll('.ta-animate').forEach(el => observer.observe(el));
+  } else {
+    root.querySelectorAll('.ta-animate').forEach(el => el.classList.add('ta-visible'));
+  }
+
+  // Init
+  updateContacts();
+  document.getElementById('ta-year').textContent = new Date().getFullYear();
+  
+  // Trigger header check on load
+  if (window.scrollY > 50) header.classList.add('scrolled');
+
+})();
+</script>
