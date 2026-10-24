@@ -1,229 +1,208 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AURA TRAVEL — Туры и путешествия из Алматы</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root { --primary: #0f172a; --accent: #d97706; --light: #f8fafc; --text: #334155; --dark: #1e293b; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; line-height: 1.6; }
-    .ta-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    
-    /* Header */
-    .ta-header { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 15px 0; position: sticky; top: 0; z-index: 100; }
-    .ta-header-inner { display: flex; justify-content: space-between; align-items: center; }
-    .ta-logo-name { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--primary); text-decoration: none; }
-    .ta-nav-list { display: flex; list-style: none; gap: 20px; align-items: center; }
-    .ta-nav-link { text-decoration: none; color: var(--text); font-weight: 500; transition: 0.3s; }
-    .ta-nav-link:hover { color: var(--accent); }
-
-    /* Hero */
-    .ta-hero { background: linear-gradient(rgba(15,23,42,0.75), rgba(15,23,42,0.75)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80') center/cover; color: #fff; padding: 90px 0; text-align: center; }
-    .ta-h1 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 15px; }
-    .ta-hero-sub { font-size: 18px; margin-bottom: 35px; opacity: 0.9; }
-    
-    /* Form */
-    .ta-form-glass { background: rgba(255,255,255,0.95); padding: 30px; border-radius: 12px; color: var(--primary); max-width: 750px; margin: 0 auto; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3); }
-    .ta-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
-    .ta-input, .ta-select { width: 100%; padding: 12px 15px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 15px; outline: none; }
-    .ta-btn { background: var(--accent); color: #fff; border: none; padding: 14px 28px; border-radius: 6px; font-weight: 600; cursor: pointer; width: 100%; font-size: 16px; transition: 0.3s; text-decoration: none; display: inline-block; }
-    .ta-btn:hover { background: #b45309; }
-    
-    /* Sections */
-    .ta-section { padding: 70px 0; }
-    .ta-bg-light { background: var(--light); }
-    .ta-bg-dark { background: var(--primary); color: #fff; }
-    .ta-h2 { font-family: 'Playfair Display', serif; font-size: 34px; text-align: center; margin-bottom: 15px; }
-    .ta-section-sub { text-align: center; margin-bottom: 45px; color: #64748b; }
-    
-    /* Grid Cards */
-    .ta-grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
-    .ta-card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; }
-    .ta-card-img { width: 100%; height: 180px; object-fit: cover; }
-    .ta-card-body { padding: 20px; }
-    .ta-card-title { font-size: 20px; margin-bottom: 10px; color: var(--primary); }
-    .ta-card-text { font-size: 14px; color: #64748b; margin-bottom: 15px; }
-    
-    /* Features */
-    .ta-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-    .ta-feature-box { background: #fff; padding: 25px; border-radius: 8px; border-left: 4px solid var(--accent); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-    .ta-feature-box h4 { font-size: 18px; margin-bottom: 8px; color: var(--primary); }
-    
-    /* FAQ */
-    .ta-faq-item { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px; padding: 18px 25px; }
-    .ta-faq-q { font-weight: 600; color: var(--primary); margin-bottom: 5px; }
-    .ta-faq-a { color: #64748b; font-size: 15px; }
-    
-    footer { background: var(--dark); color: #94a3b8; text-align: center; padding: 30px 0; font-size: 14px; }
-  </style>
-</head>
-<body>
-
+<!-- ЗАМЕНИТЕ НАЗВАНИЕ, КОНТАКТЫ И WEBHOOK ПЕРЕД ПУБЛИКАЦИЕЙ -->
 <script>
   const TA_CONFIG = {
     agencyName: 'AURA TRAVEL',
-    phone: '77774271681',
+    webhookUrl: '',
+    telegramUrl: 'https://t.me/USERNAME',
+    whatsappUrl: 'https://wa.me/77774271681',
+    phone: '+77774271681',
+    email: 'travel@example.com',
     city: 'Алматы'
   };
 </script>
 
-<header class="ta-header">
-  <div class="ta-container ta-header-inner">
-    <a href="#" class="ta-logo-name">AURA TRAVEL</a>
-    <nav>
-      <ul class="ta-nav-list">
-        <li><a href="#destinations" class="ta-nav-link">Направления</a></li>
-        <li><a href="#why-us" class="ta-nav-link">Почему мы</a></li>
-        <li><a href="#faq" class="ta-nav-link">FAQ</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<section class="ta-hero">
-  <div class="ta-container">
-    <h1 class="ta-h1">Путешествие, которое подходит именно вам</h1>
-    <p class="ta-hero-sub">Подберём пляжный, семейный, горящий или экскурсионный тур из Алматы</p>
-    
-    <form class="ta-form-glass" id="whatsapp-form">
-      <h3 style="margin-bottom: 20px;">Быстрый подбор тура</h3>
-      <div class="ta-form-grid">
-        <input type="text" id="name" class="ta-input" placeholder="Ваше имя" required>
-        <select id="destination" class="ta-select" required>
-          <option value="" disabled selected>Куда хотите поехать?</option>
-          <option value="Турция">Турция</option>
-          <option value="Египет">Египет</option>
-          <option value="ОАЭ">ОАЭ</option>
-          <option value="Таиланд">Таиланд</option>
-          <option value="Вьетнам">Вьетнам</option>
-          <option value="Мальдивы">Мальдивы</option>
-        </select>
-        <input type="text" id="date" class="ta-input" placeholder="Когда вылет?">
-        <input type="number" id="people" class="ta-input" placeholder="Сколько человек?" value="2" min="1">
+<div id="ta-premium-site">
+  <!-- HEADER -->
+  <header class="ta-header" id="ta-header">
+    <div class="ta-container ta-header-inner">
+      <a href="#" class="ta-logo" onclick="event.preventDefault(); window.scrollTo({top:0,behavior:'smooth'})">
+        <span class="ta-logo-name">AURA TRAVEL</span>
+        <span class="ta-logo-sub">Туры и путешествия из Алматы</span>
+      </a>
+      <nav class="ta-nav" id="ta-nav" aria-label="Основная навигация">
+        <ul class="ta-nav-list">
+          <li><a href="#ta-destinations" class="ta-nav-link">Направления</a></li>
+          <li><a href="#ta-types" class="ta-nav-link">Виды отдыха</a></li>
+          <li><a href="#ta-hero-form" class="ta-nav-link">Подбор тура</a></li>
+          <li><a href="#ta-why-us" class="ta-nav-link">Почему мы</a></li>
+          <li><a href="#ta-how-it-works" class="ta-nav-link">Как работаем</a></li>
+          <li><a href="#ta-faq" class="ta-nav-link">FAQ</a></li>
+          <li><a href="#ta-contacts" class="ta-nav-link">Контакты</a></li>
+        </ul>
+        <a href="#ta-hero-form" class="ta-btn ta-btn-primary ta-header-cta">Подобрать тур</a>
+      </nav>
+      <button class="ta-burger" id="ta-burger" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="ta-hero" id="ta-hero">
+    <div class="ta-hero-bg">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80" alt="Премиальный курорт" class="ta-hero-img">
+      <div class="ta-hero-overlay"></div>
+    </div>
+    <div class="ta-container ta-hero-content ta-animate">
+      <h1 class="ta-h1">Путешествие, которое подходит именно вам</h1>
+      <p class="ta-hero-sub">Подберём пляжный, семейный, горящий или экскурсионный тур под ваши даты, бюджет и пожелания</p>
+      <div class="ta-hero-btns">
+        <a href="#ta-hero-form" class="ta-btn ta-btn-gold">Подобрать тур</a>
+        <a href="#ta-destinations" class="ta-btn ta-btn-outline">Смотреть направления</a>
       </div>
-      <input type="tel" id="phone" class="ta-input" placeholder="Ваш номер WhatsApp (+7...)" style="margin-bottom: 15px;" required>
-      <button type="submit" class="ta-btn">Получить варианты в WhatsApp</button>
-    </form>
-  </div>
-</section>
-
-<!-- DESTINATIONS -->
-<section class="ta-section ta-bg-light" id="destinations">
-  <div class="ta-container">
-    <h2 class="ta-h2">Популярные направления</h2>
-    <p class="ta-section-sub">Выберите страну — мы подготовим варианты под ваши даты</p>
-    
-    <div class="ta-grid-4">
-      <div class="ta-card">
-        <img src="https://images.unsplash.com/photo-1593238739364-18cfde865870?w=600&q=80" class="ta-card-img" alt="Турция">
-        <div class="ta-card-body">
-          <h3 class="ta-card-title">Турция</h3>
-          <p class="ta-card-text">Море, «всё включено» и комфортный семейный отдых.</p>
+      <div class="ta-hero-trust">
+        <div class="ta-trust-item"><span>✓ Подбор под бюджет</span></div>
+        <div class="ta-trust-item"><span>✓ Помощь с выбором</span></div>
+        <div class="ta-trust-item"><span>✓ Сопровождение до поездки</span></div>
+        <div class="ta-trust-item"><span>✓ Вылеты из Алматы и Астаны</span></div>
+      </div>
+    </div>
+    <div class="ta-container ta-hero-form-wrap ta-animate">
+      <form class="ta-form-glass" id="ta-hero-form">
+        <h3 class="ta-form-glass-title">Быстрый подбор тура</h3>
+        <div class="ta-form-glass-grid">
+          <div class="ta-form-group">
+            <input type="text" class="ta-input" placeholder="Ваше имя" name="name" required>
+          </div>
+          <div class="ta-form-group">
+            <select class="ta-select" name="destination" required>
+              <option value="" disabled selected>Куда хотите поехать?</option>
+              <option value="Турция">Турция</option>
+              <option value="Египет">Египет</option>
+              <option value="ОАЭ">ОАЭ</option>
+              <option value="Таиланд">Таиланд</option>
+              <option value="Вьетнам">Вьетнам</option>
+              <option value="Мальдивы">Мальдивы</option>
+              <option value="Европа">Европа</option>
+            </select>
+          </div>
+          <div class="ta-form-group">
+            <input type="text" class="ta-input" placeholder="Когда планируете?" name="travelDate">
+          </div>
+          <div class="ta-form-group">
+            <input type="number" class="ta-input" placeholder="Сколько человек?" name="peopleCount" min="1" max="20" value="2">
+          </div>
+          <div class="ta-form-group">
+            <input type="tel" class="ta-input" placeholder="Ваш телефон" name="phone" required>
+          </div>
         </div>
-      </div>
-      <div class="ta-card">
-        <img src="https://images.unsplash.com/photo-1539768942893-daf53e736b68?w=600&q=80" class="ta-card-img" alt="Египет">
-        <div class="ta-card-body">
-          <h3 class="ta-card-title">Египет</h3>
-          <p class="ta-card-text">Тёплое Красное море, кораллы и доступный отдых.</p>
+        <div class="ta-form-consent">
+          <label class="ta-checkbox-label">
+            <input type="checkbox" name="consent" required checked class="ta-checkbox">
+            <span>Даю согласие на обработку персональных данных</span>
+          </label>
         </div>
-      </div>
-      <div class="ta-card">
-        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" class="ta-card-img" alt="ОАЭ">
-        <div class="ta-card-body">
-          <h3 class="ta-card-title">ОАЭ</h3>
-          <p class="ta-card-text">Премиальный сервис, современная архитектура и шопинг.</p>
-        </div>
-      </div>
-      <div class="ta-card">
-        <img src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=600&q=80" class="ta-card-img" alt="Таиланд">
-        <div class="ta-card-body">
-          <h3 class="ta-card-title">Таиланд</h3>
-          <p class="ta-card-text">Экзотика, пляжи, фрукты и незабываемая атмосфера.</p>
-        </div>
-      </div>
+        <button type="submit" class="ta-btn ta-btn-primary ta-btn-full">Получить варианты в WhatsApp</button>
+      </form>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- WHY US -->
-<section class="ta-section" id="why-us">
-  <div class="ta-container">
-    <h2 class="ta-h2">Почему выбирают нас</h2>
-    <p class="ta-section-sub">Забота о вашем комфорте на каждом этапе</p>
-    
-    <div class="ta-grid-2">
-      <div class="ta-feature-box">
-        <h4>Подбор под реальный бюджет</h4>
-        <p>Учитываем финансовые пожелания и находим лучшее соотношение цены и качества.</p>
-      </div>
-      <div class="ta-feature-box">
-        <h4>Сравнение нескольких вариантов</h4>
-        <p>Предлагаем сразу несколько отелей и направлений на выбор.</p>
-      </div>
-      <div class="ta-feature-box">
-        <h4>Учитываем семейные детали</h4>
-        <p>Подбираем удобный перелёт, детское меню и хорошую анимацию.</p>
-      </div>
-      <div class="ta-feature-box">
-        <h4>Сопровождение до вылета</h4>
-        <p>На связи с вами и всегда готовы ответить на любые вопросы по поездке.</p>
+  <!-- DESTINATIONS -->
+  <section class="ta-section ta-bg-light" id="ta-destinations">
+    <div class="ta-container">
+      <h2 class="ta-h2">Популярные направления</h2>
+      <p class="ta-section-sub">Выберите страну — мы подготовим актуальные предложения под ваши даты</p>
+      <div class="ta-grid-4">
+        <div class="ta-card"><div class="ta-card-body"><h3>Турция</h3><p>Море, «всё включено», анимации и комфорт для всей семьи.</p><a href="#ta-hero-form" class="ta-btn ta-btn-outline ta-btn-sm">Получить предложение</a></div></div>
+        <div class="ta-card"><div class="ta-card-body"><h3>Египет</h3><p>Тёплое море, дайвинг и доступные отели у Красного моря.</p><a href="#ta-hero-form" class="ta-btn ta-btn-outline ta-btn-sm">Получить предложение</a></div></div>
+        <div class="ta-card"><div class="ta-card-body"><h3>ОАЭ</h3><p>Премиальный сервис, шопинг и современная инфраструктура.</p><a href="#ta-hero-form" class="ta-btn ta-btn-outline ta-btn-sm">Получить предложение</a></div></div>
+        <div class="ta-card"><div class="ta-card-body"><h3>Таиланд</h3><p>Экзотика, красивые пляжи, вкусная еда и отличный отдых.</p><a href="#ta-hero-form" class="ta-btn ta-btn-outline ta-btn-sm">Получить предложение</a></div></div>
       </div>
     </div>
-  </div>
-</section>
+  </section><!-- WHY US -->
+  <section class="ta-section ta-bg-light" id="ta-why-us">
+    <div class="ta-container">
+      <h2 class="ta-h2">Путешествие начинается с правильного выбора</h2>
+      <div class="ta-grid-2 ta-features">
+        <div class="ta-feature"><strong>Подбираем тур под реальный бюджет</strong><p>Учитываем ваши возможности и находим лучший вариант.</p></div>
+        <div class="ta-feature"><strong>Сравниваем несколько вариантов</strong><p>Предлагаем сразу несколько отелей, чтобы вы могли выбрать.</p></div>
+        <div class="ta-feature"><strong>Учитываем отдых с детьми</strong><p>Подбираем отели с хорошим питанием и безопасной территорией.</p></div>
+        <div class="ta-feature"><strong>Остаёмся на связи до поездки</strong><p>Отвечаем на вопросы и поддерживаем перед вылетом.</p></div>
+      </div>
+    </div>
+  </section>
 
-<!-- FAQ -->
-<section class="ta-section ta-bg-light" id="faq">
-  <div class="ta-container" style="max-width: 800px;">
-    <h2 class="ta-h2">Частые вопросы</h2>
-    <p class="ta-section-sub">Всё, что важно знать перед бронированием</p>
+  <!-- FAQ -->
+  <section class="ta-section ta-bg-white" id="ta-faq">
+    <div class="ta-container ta-faq-container">
+      <h2 class="ta-h2">Частые вопросы</h2>
+      <div class="ta-faq-list">
+        <div class="ta-faq-item"><strong>Есть ли туры с вылетом из Алматы?</strong><p>Да, большинство направлений доступно с вылетом из Алматы.</p></div>
+        <div class="ta-faq-item"><strong>От чего зависит цена тура?</strong><p>Стоимость зависит от сезона, категории отеля и дат вылета.</p></div>
+        <div class="ta-faq-item"><strong>Можно ли подобрать тур заранее?</strong><p>Раннее бронирование часто позволяет выбрать лучший отель по выгодной цене.</p></div>
+      </div>
+    </div>
+  </section>
 
-    <div class="ta-faq-item">
-      <div class="ta-faq-q">Есть ли туры с вылетом из Алматы?</div>
-      <div class="ta-faq-a">Да, мы специализируемся на турах с вылетом из Алматы и Астаны.</div>
+  <!-- FOOTER -->
+  <footer class="ta-footer" id="ta-contacts" style="background:#0f172a; color:#fff; padding:40px 0; text-align:center;">
+    <div class="ta-container">
+      <p style="font-size:20px; font-weight:bold; margin-bottom:10px;">AURA TRAVEL — Туры из Алматы</p>
+      <p style="margin-bottom:20px;">Телефон / WhatsApp: +7 777 427 1681</p>
+      <p style="opacity:0.6; font-size:14px;">© Все права защищены.</p>
     </div>
-    <div class="ta-faq-item">
-      <div class="ta-faq-q">От чего зависит итоговая цена тура?</div>
-      <div class="ta-faq-a">От дат вылета, выбранного отеля, категории номера и количества человек.</div>
-    </div>
-    <div class="ta-faq-item">
-      <div class="ta-faq-q">Можно ли подобрать тур, если ещё не выбрал страну?</div>
-      <div class="ta-faq-a">Конечно! Заполните форму, и мы предложим варианты под ваши даты и бюджет.</div>
-    </div>
-  </div>
-</section>
+  </footer>
+</div>
 
-<footer>
-  <div class="ta-container">
-    <p>© AURA TRAVEL — Туры и путешествия из Алматы</p>
-  </div>
-</footer>
+<style>
+  :root { --primary: #0f172a; --accent: #d97706; --light: #f8fafc; --text: #334155; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; line-height: 1.6; }
+  .ta-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .ta-header { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 15px 0; position: sticky; top: 0; z-index: 100; }
+  .ta-header-inner { display: flex; justify-content: space-between; align-items: center; }
+  .ta-logo-name { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--primary); text-decoration: none; }
+  .ta-logo-sub { display: block; font-size: 12px; color: #64748b; }
+  .ta-nav-list { display: flex; list-style: none; gap: 20px; }
+  .ta-nav-link { text-decoration: none; color: var(--text); font-weight: 500; }
+  .ta-hero { background: linear-gradient(rgba(15,23,42,0.7), rgba(15,23,42,0.7)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80') center/cover; color: #fff; padding: 80px 0; text-align: center; position: relative; }
+  .ta-h1 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 15px; }
+  .ta-hero-sub { font-size: 18px; margin-bottom: 30px; opacity: 0.9; }
+  .ta-form-glass { background: rgba(255,255,255,0.95); padding: 30px; border-radius: 12px; color: var(--primary); max-width: 750px; margin: 30px auto 0; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); }
+  .ta-form-glass-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
+  .ta-input, .ta-select { width: 100%; padding: 12px 15px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 15px; outline: none; }
+  .ta-btn { background: var(--accent); color: #fff; border: none; padding: 14px 28px; border-radius: 6px; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; transition: 0.3s; }
+  .ta-btn-gold { background: var(--accent); }
+  .ta-btn-outline { border: 1px solid #fff; color: #fff; background: transparent; }
+  .ta-btn-primary { background: var(--accent); }
+  .ta-btn-full { width: 100%; }
+  .ta-section { padding: 60px 0; }
+  .ta-bg-light { background: var(--light); }
+  .ta-h2 { font-family: 'Playfair Display', serif; font-size: 32px; text-align: center; margin-bottom: 10px; }
+  .ta-section-sub { text-align: center; color: #64748b; margin-bottom: 30px; }
+  .ta-grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+  .ta-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+  .ta-card { background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; }
+  .ta-feature { background: #fff; padding: 20px; border-radius: 8px; border-left: 4px solid var(--accent); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+  .ta-faq-item { background: #fff; padding: 15px 20px; border-radius: 6px; border: 1px solid #e2e8f0; margin-bottom: 10px; }
+  .ta-burger { display: none; }
+  @media (max-width: 768px) { .ta-nav-list { display: none; } .ta-form-glass-grid { grid-template-columns: 1fr; } }
+</style>
 
 <script>
-  document.getElementById('whatsapp-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const dest = document.getElementById('destination').value;
-    const date = document.getElementById('date').value || 'Ближайшие дни';
-    const people = document.getElementById('people').value;
-    const phone = document.getElementById('phone').value;
-    
-    const cleanPhone = TA_CONFIG.phone.replace(/[^0-9]/g, '');
-    
-    const text = `Здравствуйте! Меня зовут ${name}.\n` +
-                 `Хочу подобрать тур: ${dest}\n` +
-                 `Даты: ${date}\n` +
-                 `Количество человек: ${people}\n` +
-                 `Мой контактный телефон: ${phone}`;
-                 
-    const waUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(text)}`;
-    window.location.href = waUrl;
+  // СКРИПТ ПРЯМОЙ ОТПРАВКИ В WHATSAPP БЕЗ ДЕМО-РЕЖИМА
+  document.addEventListener('DOMContentLoaded', function() {
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = form.querySelector('[name="name"]')?.value || 'Клиент';
+        const phone = form.querySelector('[name="phone"]')?.value || '';
+        const dest = form.querySelector('[name="destination"]')?.value || 'Не указано';
+        const date = form.querySelector('[name="travelDate"]')?.value || 'Ближайшие дни';
+        const people = form.querySelector('[name="peopleCount"]')?.value || '2';
+        
+        const text = `Здравствуйте! Меня зовут ${name}.\n` +
+                     `Хочу подобрать тур: ${dest}\n` +
+                     `Даты: ${date}\n` +
+                     `Количество человек: ${people}\n` +
+                     `Телефон: ${phone}`;
+                     
+        window.open(`https://wa.me/77774271681?text=${encodeURIComponent(text)}`, '_blank');
+      });
+    });
   });
 </script>
-
-</body>
-</html>
